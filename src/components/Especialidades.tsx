@@ -1,65 +1,74 @@
 import { useState } from 'react';
 import { MessageCircle, CheckCircle2, ChevronRight, ChevronDown, Activity } from 'lucide-react';
 
+// Importação das Imagens Reais (Pente Fino)
+import fisioImg from '../assets/FisioterapiaIBL.png';
+import esteticaImg from '../assets/Estética IBL.png';
+import pilatesImg from '../assets/PilatesIBL.png';
+import acupunturaImg from '../assets/AcupunturaIBL.png';
+import injetaveisImg from '../assets/InjetáveisIBL.png';
+import nutricaoImg from '../assets/NutriçãoIBL.png';
+import clinicaImg from '../assets/MedicinaIBL.jpg'; 
+import psicologiaImg from '../assets/PsicologiaIBL.png';
+
 export default function Especialidades() {
   const [activeTab, setActiveTab] = useState<number | null>(0);
 
-  // Textos impecáveis e tags ALT otimizadas para o Google (SEO)
   const especialidades = [
     { 
       titulo: "Fisioterapia", 
       descricao: "Retome o controle do seu corpo. Abordagem especializada para restaurar a mobilidade, aliviar a dor crônica e prevenir lesões com tecnologia de ponta.",
       itens: ["Pélvica (Uroginecológica)", "Cardiorrespiratória", "Vestibular", "Traumato-ortopédica"],
-      imagem: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
+      imagem: fisioImg,
       alt: "Sessão de fisioterapia especializada no Instituto Bodylife"
     },
     { 
       titulo: "Estética", 
       descricao: "Sua beleza, sua identidade. Procedimentos minimamente invasivos de última geração para realçar suas características naturais e rejuvenescer com segurança e sutileza.",
       itens: ["Botox e Preenchimento", "Bioestimuladores", "Fios de PDO", "Ultraforme MPT", "Lavieen ou Pisom", "Limpeza de pele"],
-      imagem: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=1200",
+      imagem: esteticaImg,
       alt: "Tratamento de estética avançada facial"
     },
     { 
       titulo: "Pilates Clínico", 
       descricao: "Fortaleça seu núcleo e liberte sua postura. O equilíbrio perfeito entre força, flexibilidade e consciência corporal sob supervisão de especialistas clínicos.",
       itens: ["Pilates Clínico", "Reabilitação", "Condicionamento Físico", "Correção Postural"],
-      imagem: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=1200",
+      imagem: pilatesImg,
       alt: "Aula de Pilates Clínico focada em reabilitação"
     },
     { 
       titulo: "Acupuntura", 
       descricao: "Harmonia milenar para a vida moderna. Alívio de dores, redução de ansiedade e restauração do equilíbrio energético através de protocolos clínicos precisos.",
       itens: ["Tratamento de Dores", "Ansiedade e Estresse", "Equilíbrio Sistêmico", "Ventosaterapia"],
-      imagem: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=1200",
+      imagem: acupunturaImg,
       alt: "Sessão de acupuntura para alívio de tensões"
     },
     { 
       titulo: "Injetáveis", 
       descricao: "Otimize sua saúde de dentro para fora. Terapias endovenosas personalizadas para máxima absorção de nutrientes, energia, imunidade e performance esportiva.",
       itens: ["Soroterapia", "Reposição Vitamínica", "Foco e Imunidade", "Acompanhamento Metabólico"],
-      imagem: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=1200",
+      imagem: injetaveisImg,
       alt: "Aplicação de soroterapia e terapias injetáveis"
     },
     { 
       titulo: "Nutrição", 
       descricao: "Abasteça seu corpo com inteligência. Planos nutricionais baseados em evidências científicas para emagrecimento, performance esportiva e longevidade.",
       itens: ["Nutrição Esportiva", "Funcional", "Nutrição Clínica", "Terceira idade"],
-      imagem: "https://images.unsplash.com/photo-1490645935967-10de6baeddc6?auto=format&fit=crop&q=80&w=1200",
+      imagem: nutricaoImg,
       alt: "Acompanhamento com nutricionista especializada"
     },
     { 
       titulo: "Clínica Médica", 
       descricao: "Sua saúde sob coordenação integral. Diagnósticos precisos, medicina preventiva e acompanhamento contínuo por médicos focados na sua qualidade de vida.",
       itens: ["Consultas de Rotina", "Check-up", "Acompanhamento Preventivo"],
-      imagem: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&q=80&w=1200",
+      imagem: clinicaImg,
       alt: "Consulta médica preventiva no Instituto Bodylife"
     },
     { 
       titulo: "Psicologia", 
       descricao: "Invista na sua maior força: sua mente. Um espaço acolhedor e confidencial para desenvolver inteligência emocional, superar desafios e viver com clareza.",
       itens: ["Terapia Individual", "Gestão de Estresse", "Desenvolvimento Pessoal"],
-      imagem: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200",
+      imagem: psicologiaImg,
       alt: "Atendimento psicológico acolhedor"
     },
   ];
@@ -70,7 +79,6 @@ export default function Especialidades() {
     <section id="especialidades" aria-labelledby="titulo-especialidades" className="w-full py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4">
         
-        {/* Cabeçalho */}
         <div className="text-center mb-16 reveal">
           <span className="text-bodylife-red font-bold tracking-widest uppercase text-sm mb-2 flex items-center justify-center gap-2">
             <Activity size={18} />
@@ -82,16 +90,12 @@ export default function Especialidades() {
           <div className="h-1.5 w-24 bg-bodylife-red mx-auto mt-6 rounded-full"></div>
         </div>
 
-        {/* ========================================= */}
-        {/* VERSÃO MOBILE (Acordeão de Alta Performance)*/}
-        {/* ========================================= */}
+        {/* VERSÃO MOBILE (Ajustada) */}
         <div className="lg:hidden flex flex-col gap-4 reveal delay-100" role="tablist">
           {especialidades.map((esp, index) => {
             const isActive = activeTab === index;
             return (
               <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300">
-                
-                {/* Botão do Acordeão (Acessibilidade Aplicada) */}
                 <button 
                   role="tab"
                   aria-expanded={isActive}
@@ -105,7 +109,6 @@ export default function Especialidades() {
                   </div>
                 </button>
 
-                {/* Conteúdo Expandido (Animação de Grid Perfeita em CSS puro) */}
                 <div 
                   id={`panel-${index}`}
                   role="tabpanel"
@@ -113,12 +116,15 @@ export default function Especialidades() {
                 >
                   <div className="overflow-hidden">
                     <div className="p-5 md:p-6 bg-white border-t border-gray-50">
-                      <img 
-                        src={esp.imagem} 
-                        alt={esp.alt} 
-                        loading="lazy" 
-                        className="w-full h-48 md:h-56 object-cover rounded-xl mb-6 shadow-md" 
-                      />
+                      {/* AJUSTE: Altura maior e object-contain para não cortar no mobile */}
+                      <div className="w-full h-64 md:h-80 bg-bodylife-base rounded-xl mb-6 overflow-hidden">
+                        <img 
+                          src={esp.imagem} 
+                          alt={esp.alt} 
+                          loading="lazy" 
+                          className="w-full h-full object-contain" 
+                        />
+                      </div>
                       <p className="text-gray-600 font-medium text-sm md:text-base mb-6 leading-relaxed">
                         {esp.descricao}
                       </p>
@@ -144,19 +150,13 @@ export default function Especialidades() {
                     </div>
                   </div>
                 </div>
-
               </div>
             );
           })}
         </div>
 
-
-        {/* ========================================= */}
-        {/* VERSÃO DESKTOP (Vitrine Interativa Premium) */}
-        {/* ========================================= */}
+        {/* VERSÃO DESKTOP (Ajustada) */}
         <div className="hidden lg:flex flex-row gap-12 reveal delay-100">
-          
-          {/* Menu Lateral de Abas */}
           <div className="w-1/3 flex flex-col gap-3" role="tablist" aria-orientation="vertical">
             {especialidades.map((esp, index) => {
               const isActive = activeTab === index;
@@ -182,37 +182,30 @@ export default function Especialidades() {
             })}
           </div>
 
-          {/* Painel da Vitrine */}
           <div className="w-2/3">
             <div 
               id="vitrine-painel"
               role="tabpanel"
-              key={activeTab} // O React recria a div, disparando a animação de fade
+              key={activeTab}
               className="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 flex flex-col h-full animate-fade-in group"
             >
-              
-              {/* Header da Vitrine (Imagem) */}
-              <div className="relative h-80 w-full shrink-0 overflow-hidden bg-gray-100">
-                <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark via-bodylife-dark/40 to-transparent z-10 opacity-90"></div>
+              {/* AJUSTE: Aumentamos a altura para h-[450px] e usamos object-contain com fundo cinza suave */}
+              <div className="relative h-[450px] w-full shrink-0 overflow-hidden bg-bodylife-base border-b border-gray-100">
+                <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/20 via-transparent to-transparent z-10 pointer-events-none"></div>
                 <img 
                   src={activeEspecialidade.imagem} 
                   alt={activeEspecialidade.alt} 
                   loading="lazy"
                   decoding="async"
-                  // Efeito Ken Burns: a imagem cresce super devagar enquanto o usuário lê
-                  className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-out" 
+                  className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-out" 
                 />
-                <div className="absolute bottom-8 left-10 z-20">
-                  <span className="bg-bodylife-red text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 inline-block shadow-lg">
-                    Especialidade
-                  </span>
-                  <h3 className="text-5xl font-black text-white tracking-tight drop-shadow-xl">
+                <div className="absolute bottom-6 left-8 z-20">
+                  <h3 className="text-4xl font-black text-bodylife-dark tracking-tight drop-shadow-sm bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/50">
                     {activeEspecialidade.titulo}
                   </h3>
                 </div>
               </div>
 
-              {/* Corpo da Vitrine (Textos e CTA) */}
               <div className="p-10 flex flex-col flex-1">
                 <p className="text-gray-600 text-xl leading-relaxed font-medium mb-10">
                   {activeEspecialidade.descricao}
@@ -233,7 +226,6 @@ export default function Especialidades() {
                   ))}
                 </div>
                 
-                {/* Botão Fixo na Base */}
                 <div className="mt-auto pt-6 border-t border-gray-100">
                   <a 
                     href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20ou%20saber%20mais%20sobre%20${activeEspecialidade.titulo}.`}
@@ -246,11 +238,9 @@ export default function Especialidades() {
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

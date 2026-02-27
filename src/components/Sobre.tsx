@@ -1,5 +1,8 @@
 import { Target, Heart, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
 
+// Importação da Imagem Real da Estrutura
+import recepcaoImg from '../assets/EstruturaRecepção.png';
+
 export default function Sobre() {
   return (
     // Tag section semântica e acessível
@@ -23,10 +26,10 @@ export default function Sobre() {
           <div className="relative h-[450px] sm:h-[550px] lg:h-[650px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
             <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/60 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
             
-            {/* Imagem otimizada para Core Web Vitals */}
+            {/* Imagem Real da Clínica otimizada para Core Web Vitals */}
             <img 
-              src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=80" 
-              alt="Equipe de especialistas do Instituto Bodylife prestando atendimento humanizado" 
+              src={recepcaoImg} 
+              alt="Recepção acolhedora do Instituto Bodylife" 
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-out"
@@ -118,7 +121,6 @@ export default function Sobre() {
 
       </div>
 
-      {/* Garante que a animação Float funcione aqui também, caso não esteja global */}
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }

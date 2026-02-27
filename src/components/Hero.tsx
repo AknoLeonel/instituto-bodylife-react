@@ -1,5 +1,8 @@
 import { CalendarCheck, Star, Users, ArrowRight } from 'lucide-react';
 
+// Importação da Imagem Real da Fachada (Pente Fino)
+import fachadaImg from '../assets/EstruturaFachada2.png';
+
 export default function Hero() {
   return (
     <section id="inicio" aria-label="Seção Inicial" className="relative w-full min-h-screen flex items-center bg-bodylife-base pt-20 overflow-hidden">
@@ -12,7 +15,7 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full relative z-10 py-12 lg:py-0">
         
-        {/* COLUNA DA ESQUERDA: Textos e Botões (Animação imediata de entrada) */}
+        {/* COLUNA DA ESQUERDA: Textos e Botões */}
         <div className="space-y-8 animate-fade-in">
           
           {/* Badge Chamativo */}
@@ -26,7 +29,7 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Título Principal (Otimizado para SEO com H1 claro) */}
+          {/* Título Principal */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-bodylife-dark leading-[1.05] tracking-tight">
             Sua saúde em <br className="hidden md:block" /> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-bodylife-red to-red-700 drop-shadow-sm">
@@ -59,7 +62,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Prova Social (Acessibilidade 100%) */}
+          {/* Prova Social */}
           <div className="flex items-center gap-4 pt-8 border-t border-gray-200/60">
             <div className="flex -space-x-3 shrink-0" aria-hidden="true">
               <img className="w-12 h-12 rounded-full border-4 border-bodylife-base object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar Paciente 1" loading="lazy" />
@@ -82,26 +85,23 @@ export default function Hero() {
           </div>
         </div>
         
-        {/* COLUNA DA DIREITA: Imagem e Cards Flutuantes */}
+        {/* COLUNA DA DIREITA: Imagem Real e Cards Flutuantes */}
         <div className="relative h-[500px] lg:h-[650px] w-full rounded-3xl overflow-hidden shadow-2xl group mt-8 lg:mt-0 animate-fade-in" style={{ animationDelay: '150ms' }}>
           
-          {/* Overlay gradiente escuro na base da imagem */}
           <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/80 via-transparent to-transparent z-10 pointer-events-none"></div>
           
-          {/* Imagem Principal (LCP OTIMIZADO) */}
+          {/* Fachada Real do Instituto Bodylife */}
           <img 
-            src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80" 
-            alt="Equipe médica do Instituto Bodylife em atendimento" 
-            fetchPriority="high" /* Força o navegador a carregar primeiro */
+            src={fachadaImg} 
+            alt="Fachada do Instituto Bodylife no Guará" 
+            fetchPriority="high"
             loading="eager" 
             decoding="sync"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[10s] ease-out"
           />
           
-          {/* Floating Card 1: Equipe (Efeito de Levitação Suave) */}
           <div 
             className="absolute bottom-8 left-6 md:left-8 z-20 bg-white/95 backdrop-blur-md p-4 md:p-5 rounded-2xl shadow-2xl border border-white/40"
-            // CSS Inline para um efeito de flutuação elegante (sobe e desce lentamente)
             style={{ animation: 'float 6s ease-in-out infinite' }}
           >
             <div className="flex items-center gap-3 md:gap-4">
@@ -115,7 +115,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Floating Card 2: Status */}
           <div 
             className="absolute top-8 right-6 md:right-8 z-20 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-2xl border border-white/40 flex items-center gap-3"
             style={{ animation: 'float 5s ease-in-out infinite reverse' }}
@@ -130,7 +129,6 @@ export default function Hero() {
 
       </div>
 
-      {/* Para a animação 'float' funcionar perfeitamente, garantimos que ela exista no CSS */}
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }
