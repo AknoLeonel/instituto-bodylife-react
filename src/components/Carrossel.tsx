@@ -63,8 +63,11 @@ export default function Carrossel() {
         <div className="absolute inset-y-0 left-0 w-20 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-20 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
-        {/* Trilha animada do carrossel */}
-        <div className="animate-scroll flex gap-6 px-6">
+        {/* Trilha animada do carrossel (Velocidade ajustada aqui no style) */}
+        <div 
+          className="animate-scroll flex gap-6 px-6" 
+          style={{ animationDuration: '25s' }}
+        >
           {imagensDuplicadas.map((espaco, index) => (
             <figure 
               key={index} 

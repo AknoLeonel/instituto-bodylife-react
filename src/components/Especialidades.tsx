@@ -10,6 +10,7 @@ import injetaveisImg from '../assets/InjetáveisIBL.png';
 import nutricaoImg from '../assets/NutriçãoIBL.png';
 import clinicaImg from '../assets/MedicinaIBL.jpg'; 
 import psicologiaImg from '../assets/PsicologiaIBL.png';
+import enfermagemImg from '../assets/EnfermagemIBL.png'; // <-- Imagem da Enfermagem Adicionada
 
 export default function Especialidades() {
   const [activeTab, setActiveTab] = useState<number | null>(0);
@@ -65,6 +66,13 @@ export default function Especialidades() {
       alt: "Consulta médica preventiva no Instituto Bodylife"
     },
     { 
+      titulo: "Enfermagem", 
+      descricao: "Cuidado contínuo, técnico e humanizado. Nossa equipe de enfermagem garante suporte integral, segurança nos procedimentos e acompanhamento de excelência.",
+      itens: ["Triagem e Acolhimento", "Curativos Especiais", "Administração de Terapias", "Suporte Clínico"],
+      imagem: enfermagemImg,
+      alt: "Atendimento e suporte de enfermagem acolhedor"
+    },
+    { 
       titulo: "Psicologia", 
       descricao: "Invista na sua maior força: sua mente. Um espaço acolhedor e confidencial para desenvolver inteligência emocional, superar desafios e viver com clareza.",
       itens: ["Terapia Individual", "Gestão de Estresse", "Desenvolvimento Pessoal"],
@@ -116,7 +124,6 @@ export default function Especialidades() {
                 >
                   <div className="overflow-hidden">
                     <div className="p-5 md:p-6 bg-white border-t border-gray-50">
-                      {/* AJUSTE: Altura maior e object-contain para não cortar no mobile */}
                       <div className="w-full h-64 md:h-80 bg-bodylife-base rounded-xl mb-6 overflow-hidden">
                         <img 
                           src={esp.imagem} 
@@ -167,16 +174,16 @@ export default function Especialidades() {
                   aria-selected={isActive}
                   aria-controls="vitrine-painel"
                   onClick={() => setActiveTab(index)}
-                  className={`group flex items-center justify-between text-left w-full px-6 py-5 rounded-2xl transition-all duration-300 border focus:outline-none ${
+                  className={`group flex items-center justify-between text-left w-full px-6 py-4 xl:py-5 rounded-2xl transition-all duration-300 border focus:outline-none ${
                     isActive 
                       ? 'bg-bodylife-red text-white border-bodylife-red shadow-[0_8px_30px_rgb(211,47,47,0.3)] scale-[1.02] translate-x-2' 
                       : 'bg-white text-gray-500 border-gray-100 hover:bg-gray-50 hover:text-bodylife-dark hover:border-gray-300'
                   }`}
                 >
-                  <span className={`font-black text-lg tracking-tight transition-colors ${isActive ? 'text-white' : 'text-bodylife-dark group-hover:text-bodylife-red'}`}>
+                  <span className={`font-black text-base xl:text-lg tracking-tight transition-colors ${isActive ? 'text-white' : 'text-bodylife-dark group-hover:text-bodylife-red'}`}>
                     {esp.titulo}
                   </span>
-                  <ChevronRight size={22} className={`transition-all duration-300 ${isActive ? 'translate-x-1 text-white opacity-100' : 'text-gray-300 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-bodylife-red'}`} />
+                  <ChevronRight size={20} className={`transition-all duration-300 ${isActive ? 'translate-x-1 text-white opacity-100' : 'text-gray-300 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-bodylife-red'}`} />
                 </button>
               );
             })}
@@ -189,7 +196,6 @@ export default function Especialidades() {
               key={activeTab}
               className="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 flex flex-col h-full animate-fade-in group"
             >
-              {/* AJUSTE: Aumentamos a altura para h-[450px] e usamos object-contain com fundo cinza suave */}
               <div className="relative h-[450px] w-full shrink-0 overflow-hidden bg-bodylife-base border-b border-gray-100">
                 <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/20 via-transparent to-transparent z-10 pointer-events-none"></div>
                 <img 
@@ -207,7 +213,7 @@ export default function Especialidades() {
               </div>
 
               <div className="p-10 flex flex-col flex-1">
-                <p className="text-gray-600 text-xl leading-relaxed font-medium mb-10">
+                <p className="text-gray-600 text-lg xl:text-xl leading-relaxed font-medium mb-10">
                   {activeEspecialidade.descricao}
                 </p>
                 
@@ -231,7 +237,7 @@ export default function Especialidades() {
                     href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20ou%20saber%20mais%20sobre%20${activeEspecialidade.titulo}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full gap-3 bg-bodylife-red text-white py-6 rounded-2xl font-black text-lg hover:bg-red-700 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(211,47,47,0.3)] hover:shadow-[0_15px_50px_rgba(211,47,47,0.5)] group/btn"
+                    className="flex items-center justify-center w-full gap-3 bg-bodylife-red text-white py-5 xl:py-6 rounded-2xl font-black text-lg hover:bg-red-700 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(211,47,47,0.3)] hover:shadow-[0_15px_50px_rgba(211,47,47,0.5)] group/btn"
                   >
                     <MessageCircle size={26} className="group-hover/btn:animate-bounce" />
                     AGENDAR CONSULTA DE {activeEspecialidade.titulo.toUpperCase()}

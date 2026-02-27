@@ -78,7 +78,7 @@ export default function Sobre() {
               O <strong className="text-bodylife-dark font-bold">Instituto Bodylife</strong> nasceu do propósito de oferecer liberdade para quem deseja viver sem dores e com máxima qualidade de vida. Localizados no Guará, somos a referência em saúde integrada no Distrito Federal.
             </p>
             <p>
-              Acreditamos que o corpo humano é uma máquina perfeita que precisa de movimento e equilíbrio. Por isso, reunimos os melhores especialistas em <span className="text-bodylife-dark font-bold underline decoration-bodylife-red/30 underline-offset-4">Fisioterapia, Estética, Nutrição, Psicologia e Medicina</span> em um espaço moderno, seguro e totalmente acolhedor.
+              Acreditamos que o corpo humano é uma máquina perfeita que precisa de movimento e equilíbrio. Por isso, reunimos os melhores especialistas em <span className="text-bodylife-dark font-bold underline decoration-bodylife-red/30 underline-offset-4">Fisioterapia, Estética, Nutrição, Psicologia, Medicina e Enfermagem</span> em um espaço moderno, seguro e totalmente acolhedor.
             </p>
           </div>
 
