@@ -66,7 +66,7 @@ export default function Carrossel() {
         {/* Trilha animada do carrossel (Velocidade ajustada aqui no style) */}
         <div 
           className="animate-scroll flex gap-6 px-6" 
-          style={{ animationDuration: '25s' }}
+          style={{ animationDuration: '18s' }}
         >
           {imagensDuplicadas.map((espaco, index) => (
             <figure 
