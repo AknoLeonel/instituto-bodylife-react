@@ -1,0 +1,74 @@
+/* RESET DE ESTRUTURA - Essencial para Landing Pages */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left; /* Remove o centralizado forçado do Vite */
+}
+
+/* SELEÇÃO PREMIUM - O texto selecionado fica com a cor da marca */
+::selection {
+  background-color: rgba(211, 47, 47, 0.2); /* Vermelho Bodylife suave */
+  color: #D32F2F;
+}
+
+/* SCROLLBAR PERSONALIZADA - Nível Master Elegance */
+/* Funciona em Chrome, Edge e Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db; /* Cinza elegante */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D32F2F; /* Vermelho ao interagir */
+}
+
+/* Suporte para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f1f1f1;
+}
+
+/* PREVENÇÃO DE CLIQUE DUPLO NO MOBILE - UX para clientes leigos */
+a, button {
+  touch-action: manipulation;
+}
+
+/* FOCO ACESSÍVEL - Para usuários que usam teclado (SEO e Acessibilidade) */
+:focus-visible {
+  outline: 2px solid #D32F2F;
+  outline-offset: 4px;
+}
+
+/* AJUSTE DE IMAGENS - Evita que fotos "vazarem" do layout em telas pequenas */
+img {
+  max-width: 100%;
+  height: auto;
+  font-style: italic; /* Caso a imagem quebre, o alt fica elegante */
+  vertical-align: middle;
+}
+
+/* CLASSES DE SUPORTE PARA ANIMAÇÕES (Fade In do Hero) */
+.animate-fade-in {
+  animation: fadeInApp 1s ease-out forwards;
+}
+
+@keyframes fadeInApp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

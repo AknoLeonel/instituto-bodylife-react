@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* 1. CONFIGURAÇÃO DE TEMA (Tailwind V4 Master)                               */
+/* -------------------------------------------------------------------------- */
+@theme {
+  --color-bodylife-white: #FFFFFF;
+  --color-bodylife-base: #F9FAFB;
+  --color-bodylife-red: #D32F2F;
+  --color-bodylife-red-dark: #B71C1C;
+  --color-bodylife-dark: #1F2937;
+  --color-bodylife-gray: #4B5563;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. RESETS E REFINAMENTOS GLOBAIS                                           */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  /* Melhora a renderização de fontes em Mac e Windows */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-bodylife-base);
+  color: var(--color-bodylife-dark);
+  overflow-x: hidden;
+  
+  /* FUNDO PREMIUM: Mix de textura de pontos + Blobs orgânicos fixos */
+  background-image: 
+    radial-gradient(#e5e7eb 1px, transparent 1px),
+    radial-gradient(circle at 0% 0%, rgba(211, 47, 47, 0.03) 0%, transparent 35%),
+    radial-gradient(circle at 100% 100%, rgba(31, 41, 55, 0.02) 0%, transparent 35%);
+  background-size: 32px 32px, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}
+
+/* Estilo de seleção de texto da marca */
+::selection {
+  background-color: rgba(211, 47, 47, 0.2);
+  color: var(--color-bodylife-red);
+}
+
+/* Foco acessível e elegante para navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-bodylife-red);
+  outline-offset: 4px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. BIBLIOTECA DE ANIMAÇÕES (Alta Performance - 60 FPS)                     */
+/* -------------------------------------------------------------------------- */
+
+/* Scroll Infinito (Direita para Esquerda) */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Scroll Infinito Reverso (Esquerda para Direita) */
+@keyframes scroll-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Pulso Suave para o WhatsApp */
+@keyframes pulse-ring {
+  0% { transform: scale(0.33); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Fade In Suave para Elementos Estáticos */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. CLASSES UTILITÁRIAS EXCLUSIVAS                                          */
+/* -------------------------------------------------------------------------- */
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  will-change: transform; /* Força o uso da GPU */
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll:hover, 
+.animate-scroll-reverse:hover {
+  animation-play-state: paused;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Esconde scrollbars sem perder a funcionalidade de scroll (Mobile First) */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. SISTEMA DE REVEAL (Intersection Observer)                               */
+/* -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Delays Estáticos Blindados contra Purge do Tailwind */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* -------------------------------------------------------------------------- */
+/* 6. RESPONSIVIDADE DE TEXTO (Ajuste Fino)                                    */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .reveal {
+    transform: translateY(20px); /* Menor deslocamento no mobile para evitar 'salto' */
+  }
+}
