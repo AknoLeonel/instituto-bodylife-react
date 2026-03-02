@@ -7,23 +7,19 @@ export default function FAQ() {
   const faqs = [
     {
       pergunta: "Quais convênios o Instituto Bodylife atende?",
-      resposta: "Atendemos uma ampla rede de convênios, incluindo BACEN, BNDES, Saúde Caixa, TRT, TST, STF-MED, entre dezenas de outros. Confira a nossa seção de 'Convênios' acima para a lista completa. Caso o seu não esteja lá, entre em contato para verificarmos opções de reembolso."
+      resposta: "Atendemos uma ampla rede de convênios, incluindo: AFEB, BACEN, BNDES, CAESAN, CAPESESP, CODEVASF, CONAB, EMBRATEL/TELOS, FASCAL, FUSEX, INAS-GDF, LUMINAR, NOTRE DAME, NOVA SAÚDE, OMINT, PF SAÚDE, PLAN-ASSISTE, POSTAL SAÚDE, REAL GRANDEZA, SAMP/AGMP, SAÚDE CAIXA, SERPRO, SIS, STF-MED, STM, TER, TJDFT, TRF, TRT, TST, UNAFISCO e UNIMED VTRP."
     },
     {
-      pergunta: "Como funciona o agendamento de consultas?",
-      resposta: "Pensando na sua comodidade, todo o nosso agendamento é feito de forma rápida e humanizada pelo nosso WhatsApp oficial. Basta clicar em qualquer botão vermelho do site, escolher sua especialidade e nossa equipe encontrará o melhor horário para você."
-    },
-    {
-      pergunta: "A clínica possui estacionamento?",
-      resposta: "Sim! Estamos localizados no Guará II (QI 08) em um ponto de fácil acesso, com facilidade para estacionar nas proximidades da clínica, garantindo tranquilidade desde a sua chegada."
+      pergunta: "Como funciona o agendamento de avaliações?",
+      resposta: "Pensando na sua comodidade, nosso agendamento é feito de forma rápida e humanizada. Você pode agendar sua avaliação diretamente pelo nosso WhatsApp oficial ou ligando pelo telefone. Nossa equipe de recepção te ajudará a encontrar o melhor horário."
     },
     {
       pergunta: "Vocês atendem pacientes de todas as idades?",
-      resposta: "Com certeza. Nossa equipe multidisciplinar está preparada para cuidar de toda a sua família. Temos desde nutrição e clínica médica para a terceira idade, até tratamentos estéticos e fisioterapia esportiva."
+      resposta: "Focamos nosso atendimento especializado em adolescentes a partir de 12 anos, adultos e idosos. Atualmente, não possuímos profissionais voltados para o atendimento de crianças pequenas (pediatria)."
     },
     {
       pergunta: "Quais são os horários de funcionamento?",
-      resposta: "Estamos abertos de Segunda a Sexta-feira, das 07h às 19h. Recomendamos que agende sua consulta com antecedência para garantir o horário que melhor se adapta à sua rotina."
+      resposta: "Estamos abertos de Segunda a Sexta-feira, das 07h às 19h. Recomendamos que agende sua avaliação com antecedência para garantir o horário que melhor se adapta à sua rotina."
     }
   ];
 
@@ -65,7 +61,7 @@ export default function FAQ() {
             <HelpCircle size={18} />
             Tire suas dúvidas
           </span>
-          <h2 id="titulo-faq" className="text-4xl md:text-5xl lg:text-6xl font-black text-bodylife-dark uppercase tracking-tighter mb-6">
+          <h2 id="titulo-faq" className="text-4xl md:text-5xl lg:text-6xl font-bold text-bodylife-dark uppercase tracking-tighter mb-6">
             Perguntas Frequentes
           </h2>
           <div className="h-1.5 w-24 bg-bodylife-red mx-auto rounded-full"></div>
@@ -110,7 +106,7 @@ export default function FAQ() {
                   className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 md:px-8 pb-6 md:pb-8 text-gray-600 font-medium text-sm md:text-base leading-relaxed mt-2 border-t border-gray-50 pt-4 md:pt-6">
+                    <p className="px-5 md:px-8 pb-6 md:pb-8 text-gray-600 font-bold text-sm md:text-base leading-relaxed mt-2 border-t border-gray-50 pt-4 md:pt-6">
                       {faq.resposta}
                     </p>
                   </div>
@@ -124,8 +120,8 @@ export default function FAQ() {
         <div className="mt-16 reveal delay-300">
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 lg:p-10 text-center border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.05)] relative overflow-hidden">
             
-            <h4 className="text-2xl font-black text-bodylife-dark mb-3">Ainda tem alguma dúvida?</h4>
-            <p className="text-gray-500 mb-8 font-medium text-lg">Nossa equipe de atendimento humano está pronta para ajudar você agora mesmo.</p>
+            <h4 className="text-2xl font-bold text-bodylife-dark mb-3">Ainda tem alguma dúvida?</h4>
+            <p className="text-gray-500 mb-8 font-bold text-lg">Nossa equipe de atendimento humano está pronta para ajudar você agora mesmo.</p>
             
             <a 
               href="https://wa.me/5561998796606?text=Olá,%20estou%20no%20site%20e%20fiquei%20com%20uma%20dúvida." 
