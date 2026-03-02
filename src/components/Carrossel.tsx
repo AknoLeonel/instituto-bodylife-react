@@ -1,6 +1,4 @@
-import { ImageIcon } from 'lucide-react';
-
-// Seleção VIP apenas com fotos reais de ESTRUTURA
+// Importação das Imagens Reais da Estrutura
 import fachadaImg from '../assets/EstruturaFachada1.png';
 import recepcaoImg from '../assets/EstruturaRecepção.png';
 import esperaImg from '../assets/EstruturaSaladeEspera.png';
@@ -40,7 +38,6 @@ export default function Carrossel() {
     <section aria-labelledby="titulo-espaco" className="w-full py-24 bg-white overflow-hidden flex flex-col items-center border-t border-gray-100">
       
       <div className="text-center mb-12 px-4 reveal">
-        {/* A Tag "Tour Virtual" foi removida conforme a solicitação */}
         <h2 id="titulo-espaco" className="text-3xl md:text-5xl font-bold text-bodylife-dark uppercase tracking-tighter">
           Conheça o nosso espaço
         </h2>
