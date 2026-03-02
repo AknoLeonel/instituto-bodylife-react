@@ -117,7 +117,7 @@ export default function FAQ() {
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 lg:p-10 text-center border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.05)] relative overflow-hidden">
             
             <h4 className="text-2xl font-bold text-bodylife-dark mb-3">Ainda tem alguma dúvida?</h4>
-            <p className="text-gray-500 mb-8 font-bold text-lg">Nossa equipe de atendimento humano está pronta para ajudar você agora mesmo.</p>
+            <p className="text-gray-500 mb-8 font-bold text-lg">Nossa equipe está pronta para te atender</p>
             
             <a 
               href="https://wa.me/5561998796606?text=Olá,%20estou%20no%20site%20e%20fiquei%20com%20uma%20dúvida." 
