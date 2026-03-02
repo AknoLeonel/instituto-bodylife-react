@@ -1,7 +1,7 @@
 import { Target, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
 
 // Importação da Imagem Real da Estrutura
-import recepcaoImg from '../assets/EstruturaRecepção.png';
+import recepcaoImg from '../assets/EstruturaNome.png';
 
 export default function Sobre() {
   return (
