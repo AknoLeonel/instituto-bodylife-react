@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock, Mail, Navigation, Instagram, Facebook, Heart } from 'lucide-react';
+import logoImg from '../assets/logosemfun.png';
 
 export default function Footer() {
   return (
@@ -18,6 +19,7 @@ export default function Footer() {
           <div className="space-y-6 reveal">
             {/* Logo que funciona como botão Voltar ao Topo */}
             <a href="#inicio" aria-label="Voltar ao início do site" className="flex flex-col w-max group">
+              <img src={logoImg} alt="Logo do Instituto BodyLife" className="w-16 h-16 object-contain mb-2" />
               <span className="text-bodylife-red font-bold text-xl leading-none group-hover:text-red-400 transition-colors">INSTITUTO</span>
               <span className="text-bodylife-dark font-black text-3xl tracking-tighter leading-none group-hover:text-gray-700 transition-colors">BODYLIFE</span>
             </a>

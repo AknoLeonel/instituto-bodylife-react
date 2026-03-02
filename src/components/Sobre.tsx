@@ -1,5 +1,6 @@
 import { Target, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
 
+
 // Importação da Imagem Real da Estrutura
 import recepcaoImg from '../assets/EstruturaNome.png';
 

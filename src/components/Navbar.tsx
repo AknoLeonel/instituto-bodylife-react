@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle, Menu, X, Mail, Instagram } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logosemfun.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
