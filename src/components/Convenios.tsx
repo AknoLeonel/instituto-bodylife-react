@@ -1,15 +1,44 @@
-import { ShieldCheck, MessageCircle, HeartHandshake } from 'lucide-react';
+import { MessageCircle, HeartHandshake } from 'lucide-react';
 
 export default function Convenios() {
-  // Array limpo e organizado alfabeticamente
+  // ========================================================================
+  // ATENÇÃO AQUI: Ajuste o finalzinho (.png, .jpg, .webp) para bater 
+  // EXATAMENTE com o nome do arquivo que está na sua pasta public/convenios/
+  // ========================================================================
   const convenios = [
-    "AFEB", "BACEN", "BNDES", "CAESAN", "CAPESESP", "CODEVASF", "CONAB", 
-    "EMBRATEL/TELOS", "FASCAL", "FUSEX", "LUMINAR", "NOTRE DAME", 
-    "NOVA SAÚDE", "OMINT", "PF SAÚDE", "PLAN-ASSISTE", "POSTAL SAÚDE", 
-    "REAL GRANDEZA", "SAMP/AGMP", "SAÚDE CAIXA", "SIS", "SERPRO", 
-    "STF-MED", "STM", "TJDFT", "TER", "TRF", "TRT", "TST", 
-    "UNAFISCO", "UNIMED VTRP", "INAS-GDF"
-  ].sort();
+    { nome: "AFEB", logo: "/convenios/afeb.png" },
+    { nome: "BACEN", logo: "/convenios/bacen.png" },
+    { nome: "BNDES", logo: "/convenios/bndes.jpg" },
+    { nome: "CAESAN", logo: "/convenios/caesan.webp" },
+    { nome: "CAPESESP", logo: "/convenios/capesesp.png" },
+    { nome: "CODEVASF", logo: "/convenios/codevasf.webp" },
+    { nome: "CONAB", logo: "/convenios/conab.png" },
+    { nome: "EMBRATEL/TELOS", logo: "/convenios/embratel.png" },
+    { nome: "FASCAL", logo: "/convenios/fascal.webp" },
+    { nome: "FUSEX", logo: "/convenios/fusex.webp" },
+    { nome: "INAS-GDF", logo: "/convenios/inas.png" },
+    { nome: "LUMINAR", logo: "/convenios/luminar.png" },
+    { nome: "NOTRE DAME", logo: "/convenios/notre.webp" },
+    { nome: "NOVA SAÚDE", logo: "/convenios/novasaude.png" },
+    { nome: "OMINT", logo: "/convenios/omint.png" },
+    { nome: "PF SAÚDE", logo: "/convenios/pf.webp" },
+    { nome: "PLAN-ASSISTE", logo: "/convenios/plan.webp" },
+    { nome: "POSTAL SAÚDE", logo: "/convenios/postal.png" },
+    { nome: "REAL GRANDEZA", logo: "/convenios/real.png" },
+    { nome: "SAMP/AGMP", logo: "/convenios/samp.jpeg" },
+    { nome: "SAÚDE CAIXA", logo: "/convenios/saude.webp" },
+    { nome: "SERPRO", logo: "/convenios/serpro.webp" },
+    { nome: "SIS", logo: "/convenios/sis.webp" },
+    { nome: "STF-MED", logo: "/convenios/stf.jpg" },
+    { nome: "STM", logo: "/convenios/stm.png" },
+    { nome: "TER", logo: "/convenios/ter.png" },
+    { nome: "TJDFT", logo: "/convenios/tjdft.png" },
+    { nome: "TRF", logo: "/convenios/trf.png" },
+    { nome: "TRT", logo: "/convenios/trt.png" },
+    { nome: "TST", logo: "/convenios/tst.webp" },
+    { nome: "UNAFISCO", logo: "/convenios/unafisco.png" },
+    { nome: "UNIMED VTRP", logo: "/convenios/unimed.webp" }
+  ];
 
   // Divisão matemática perfeita para as duas linhas do carrossel visual
   const metade = Math.ceil(convenios.length / 2);
@@ -37,7 +66,7 @@ export default function Convenios() {
       {/* TRUQUE SEO/A11Y MASTER LEVEL */}
       <ul className="sr-only">
         {convenios.map((convenio, index) => (
-          <li key={`sr-${index}`}>{convenio}</li>
+          <li key={`sr-${index}`}>{convenio.nome}</li>
         ))}
       </ul>
 
@@ -53,11 +82,25 @@ export default function Convenios() {
           {linha1.map((convenio, index) => (
             <div 
               key={`l1-${index}`} 
-              className="flex items-center gap-3 bg-white px-6 md:px-8 py-4 rounded-2xl border border-gray-100 shadow-sm shrink-0 hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 cursor-default group"
+              className="flex items-center justify-center w-40 h-20 px-6 bg-white rounded-2xl border border-gray-100 shadow-sm shrink-0 hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 cursor-default group"
+              title={convenio.nome}
             >
-              <ShieldCheck className="text-gray-300 group-hover:text-bodylife-red transition-colors shrink-0" size={24} />
-              <span className="font-bold text-gray-600 group-hover:text-bodylife-dark text-base md:text-lg transition-colors whitespace-nowrap">
-                {convenio}
+              <img 
+                src={convenio.logo} 
+                alt={`Logo ${convenio.nome}`}
+                loading="lazy"
+                decoding="async" 
+                className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                // BLINDAGEM: Se errar a extensão, esconde a imagem e mostra o texto
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  if (e.currentTarget.nextElementSibling) {
+                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
+                  }
+                }}
+              />
+              <span className="hidden font-bold text-gray-600 text-sm text-center">
+                {convenio.nome}
               </span>
             </div>
           ))}
@@ -68,11 +111,25 @@ export default function Convenios() {
           {linha2.map((convenio, index) => (
             <div 
               key={`l2-${index}`} 
-              className="flex items-center gap-3 bg-white px-6 md:px-8 py-4 rounded-2xl border border-gray-100 shadow-sm shrink-0 hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 cursor-default group"
+              className="flex items-center justify-center w-40 h-20 px-6 bg-white rounded-2xl border border-gray-100 shadow-sm shrink-0 hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 cursor-default group"
+              title={convenio.nome}
             >
-              <ShieldCheck className="text-gray-300 group-hover:text-bodylife-red transition-colors shrink-0" size={24} />
-              <span className="font-bold text-gray-600 group-hover:text-bodylife-dark text-base md:text-lg transition-colors whitespace-nowrap">
-                {convenio}
+              <img 
+                src={convenio.logo} 
+                alt={`Logo ${convenio.nome}`}
+                loading="lazy"
+                decoding="async" 
+                className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                // BLINDAGEM: Se errar a extensão, esconde a imagem e mostra o texto
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  if (e.currentTarget.nextElementSibling) {
+                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
+                  }
+                }}
+              />
+              <span className="hidden font-bold text-gray-600 text-sm text-center">
+                {convenio.nome}
               </span>
             </div>
           ))}
@@ -89,7 +146,7 @@ export default function Convenios() {
           <div className="text-center md:text-left relative z-10 space-y-3">
             <h3 className="text-3xl font-bold text-white tracking-tight">Não encontrou o seu convênio?</h3>
             <p className="text-gray-300 font-bold text-lg md:text-xl max-w-xl">
-              Temos soluções flexíveis! Verifique a disponibilidade, com nossa equipe de recepção.
+              Temos soluções flexíveis! Verifique a disponibilidade com nossa equipe de recepção.
             </p>
           </div>
           
