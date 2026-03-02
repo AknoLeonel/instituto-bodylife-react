@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X, Mail, Instagram } from 'lucide-react';
+import { MessageCircle, Menu, X, Mail, Instagram, Navigation } from 'lucide-react';
 import logoImg from '../assets/logosemfun.png';
 
 export default function Navbar() {
@@ -44,15 +44,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
 
         <a href="#inicio" className="flex items-center gap-3 z-50 relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-bodylife-red rounded-sm">
-          {/* LOGO BLINDADA (Tamanho fixo e sem estourar o layout) */}
+          {/* LOGO BLINDADA */}
           <img 
             src={logoImg} 
             alt="Logo Instituto Bodylife" 
             className={`object-contain shrink-0 transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-14 h-14'}`}
           />
-          
         </a>
 
+        {/* Menu Central Desktop */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link, index) => (
             <a
@@ -73,40 +73,39 @@ export default function Navbar() {
             Trabalhe Conosco
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-bodylife-red transition-all duration-300 group-hover:w-full"></span>
           </a>
+        </div>
 
-          {/* NOVOS ÍCONES DE APPS (Instagram e WhatsApp) */}
-          <div className="flex items-center gap-3 ml-2 border-l border-gray-200 pl-4">
-            <a 
-              href="https://instagram.com/institutobodylife" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-bodylife-red transition-colors group"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} className="group-hover:scale-110 transition-transform" />
-            </a>
+        {/* Container da Direita: Apps e Hambúrguer */}
+        <div className="flex items-center gap-5 z-50">
+          
+          {/* Ícones Substituindo o Botão (Desktop) */}
+          <div className="hidden md:flex items-center gap-5 pr-2">
             <a 
               href="https://wa.me/5561998796606" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-bodylife-red transition-colors group"
-              aria-label="WhatsApp"
+              aria-label="Falar no WhatsApp"
             >
-              <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
+              <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />
             </a>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-4 z-50">
-          <div className="hidden md:block">
-            <a
-              href="https://wa.me/5561998796606?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta!"
-              target="_blank"
+            <a 
+              href="https://instagram.com/institutobodylife" 
+              target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-bodylife-red text-white px-7 py-2.5 rounded-full font-bold text-sm hover:bg-red-700 shadow-[0_4px_14px_rgba(211,47,47,0.3)] hover:-translate-y-0.5 transition-all duration-300 group"
+              className="text-gray-400 hover:text-bodylife-red transition-colors group"
+              aria-label="Acessar Instagram"
             >
-              <MessageCircle size={18} className="group-hover:animate-bounce" />
-              Agendar Agora
+              <Instagram size={24} className="group-hover:scale-110 transition-transform" />
+            </a>
+            <a 
+              href="https://waze.com/ul?q=Instituto+Bodylife+Guara" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-bodylife-red transition-colors group"
+              aria-label="Como chegar pelo Waze"
+            >
+              <Navigation size={24} className="group-hover:scale-110 transition-transform" />
             </a>
           </div>
 
@@ -156,17 +155,20 @@ export default function Navbar() {
             Trabalhe Conosco
           </a>
 
-          {/* Redes Sociais Mobile */}
+          {/* Redes Sociais Mobile (Agora com Waze também) */}
           <div 
             style={{
               transitionDelay: isOpen ? `${(navLinks.length + 1) * 50}ms` : '0ms',
               transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
               opacity: isOpen ? 1 : 0
             }}
-            className="flex gap-6 mt-4 mb-2"
+            className="flex gap-8 mt-4 mb-2"
           >
             <a href="https://instagram.com/institutobodylife" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-bodylife-red">
               <Instagram size={28} />
+            </a>
+            <a href="https://waze.com/ul?q=Instituto+Bodylife+Guara" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-bodylife-red">
+              <Navigation size={28} />
             </a>
           </div>
 

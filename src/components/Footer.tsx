@@ -3,9 +3,9 @@ import logoImg from '../assets/logosemfun.png';
 
 export default function Footer() {
   return (
-    <footer id="contato" className="w-full bg-gray-50 text-bodylife-dark pt-24 pb-8 border-t-[6px] border-bodylife-red relative overflow-hidden">
+    <footer id="contato" className="w-full bg-gray-200 text-bodylife-dark pt-24 pb-8 border-t-[6px] border-bodylife-red relative overflow-hidden">
       
-      {/* Detalhe visual de fundo adaptado para o tema claro */}
+      {/* Detalhe visual de fundo adaptado para o tema claro/cinza */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5 z-0">
         <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-bodylife-red rounded-full blur-[120px]"></div>
       </div>
@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="space-y-6 reveal">
             {/* Logo que funciona como botão Voltar ao Topo */}
             <a href="#inicio" aria-label="Voltar ao início do site" className="flex flex-col w-max group">
-              <img src={logoImg} alt="Logo do Instituto BodyLife" className="w-16 h-16 object-contain mb-2" />
+              <img src={logoImg} alt="Logo do Instituto BodyLife" className="w-16 h-16 object-contain mb-2 group-hover:scale-105 transition-transform duration-300 origin-left" />
               <span className="text-bodylife-red font-bold text-xl leading-none group-hover:text-red-400 transition-colors">INSTITUTO</span>
               <span className="text-bodylife-dark font-black text-3xl tracking-tighter leading-none group-hover:text-gray-700 transition-colors">BODYLIFE</span>
             </a>
@@ -33,14 +33,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Acesse nosso Instagram"
-                className="w-11 h-11 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 hover:text-white hover:border-transparent transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)] hover:-translate-y-1"
+                className="w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)] hover:-translate-y-1"
               >
                 <Instagram size={20} />
               </a>
               <a 
                 href="#" 
                 aria-label="Acesse nossa página no Facebook"
-                className="w-11 h-11 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white hover:border-transparent transition-all duration-300 hover:shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:-translate-y-1"
+                className="w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:-translate-y-1"
               >
                 <Facebook size={20} />
               </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                 aria-label="Chamar na Recepção pelo WhatsApp"
                 className="flex items-start gap-3 group"
               >
-                <div className="bg-white border border-gray-100 p-2.5 rounded-xl text-bodylife-red group-hover:bg-bodylife-red group-hover:text-white transition-all duration-300 shadow-sm">
+                <div className="bg-white p-2.5 rounded-xl text-bodylife-red group-hover:bg-bodylife-red group-hover:text-white transition-all duration-300 shadow-sm">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -72,7 +72,7 @@ export default function Footer() {
               </a>
 
               <div className="flex items-start gap-3 group">
-                <div className="bg-white border border-gray-100 p-2.5 rounded-xl text-gray-400 group-hover:text-bodylife-red transition-colors shadow-sm">
+                <div className="bg-white p-2.5 rounded-xl text-gray-500 group-hover:text-bodylife-red transition-colors shadow-sm">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -113,7 +113,7 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Abrir rota no Waze"
-                className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-xl bg-white border border-gray-200 text-sm font-bold text-gray-600 hover:bg-bodylife-red hover:border-bodylife-red hover:text-white transition-all duration-300 group shadow-sm"
+                className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-xl bg-white text-sm font-bold text-gray-600 hover:bg-bodylife-red hover:text-white transition-all duration-300 group shadow-sm"
               >
                 <Navigation className="w-4 h-4 text-bodylife-red group-hover:text-white group-hover:animate-bounce" />
                 Como chegar (Waze)
@@ -128,13 +128,13 @@ export default function Footer() {
               Institucional
             </h4>
             
-            {/* Box Elegante de Responsabilidade Técnica para Tema Claro */}
-            <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-5 space-y-4 hover:shadow-md transition-all">
+            {/* Box Elegante de Responsabilidade Técnica com fundo branco para contraste */}
+            <div className="bg-white shadow-sm rounded-2xl p-5 space-y-4 hover:shadow-md transition-all border border-gray-100">
               <div>
                 <p className="text-[11px] text-bodylife-red font-black uppercase tracking-widest mb-1">Responsável Técnica</p>
                 <p className="text-sm text-bodylife-dark font-bold">Dra. Nádyla Braz <span className="text-gray-500 font-medium ml-1 text-xs">CRM 30042</span></p>
               </div>
-              <div className="w-full h-px bg-gradient-to-r from-gray-200 to-transparent"></div>
+              <div className="w-full h-px bg-gray-200"></div>
               <div>
                 <p className="text-[11px] text-bodylife-red font-black uppercase tracking-widest mb-1">Enfermeira RT</p>
                 <p className="text-sm text-bodylife-dark font-bold">Luana Cristina <span className="text-gray-500 font-medium ml-1 text-xs">COREN 759.394</span></p>
@@ -148,7 +148,7 @@ export default function Footer() {
                 aria-label="Enviar e-mail para o Trabalhe Conosco"
                 className="group flex items-center gap-2.5 text-sm font-bold text-gray-600 hover:text-bodylife-red transition-colors"
               >
-                <div className="bg-white border border-gray-100 shadow-sm p-2 rounded-lg group-hover:bg-bodylife-red transition-colors">
+                <div className="bg-white shadow-sm p-2 rounded-lg group-hover:bg-bodylife-red transition-colors">
                   <Mail className="w-4 h-4 text-bodylife-red group-hover:text-white" />
                 </div>
                 <span className="border-b border-transparent group-hover:border-bodylife-red transition-colors pb-0.5">
@@ -161,7 +161,7 @@ export default function Footer() {
         </div>
 
         {/* Rodapé Base (Copyright) */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold text-gray-500 reveal delay-300">
+        <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold text-gray-500 reveal delay-300">
           <p>© {new Date().getFullYear()} Instituto Bodylife. Todos os direitos reservados.</p>
           <p className="flex items-center gap-1.5">
             Feito com <Heart size={14} className="text-bodylife-red animate-pulse" fill="currentColor" /> e excelência.
