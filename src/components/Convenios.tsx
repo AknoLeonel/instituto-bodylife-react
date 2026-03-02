@@ -31,7 +31,7 @@ export default function Convenios() {
     { nome: "SIS", logo: "/convenios/sis.webp" },
     { nome: "STF-MED", logo: "/convenios/stf.jpg" },
     { nome: "STM", logo: "/convenios/stm.png" },
-    { nome: "TER", logo: "/convenios/ter.png" },
+    { nome: "TER", logo: "/convenios/tre.webp" },
     { nome: "TJDFT", logo: "/convenios/tjdft.png" },
     { nome: "TRF", logo: "/convenios/trf.webp" },
     { nome: "TRT", logo: "/convenios/trt.png" },
