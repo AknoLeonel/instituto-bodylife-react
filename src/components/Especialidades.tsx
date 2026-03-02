@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MessageCircle, CheckCircle2, ChevronRight, ChevronDown, Activity } from 'lucide-react';
+import { MessageCircle, CheckCircle2, ChevronRight, ChevronDown, Activity, User } from 'lucide-react';
 
 // Importação das Imagens Reais (Pente Fino)
 import fisioImg from '../assets/FisioterapiaIBL.png';
@@ -10,71 +10,95 @@ import injetaveisImg from '../assets/InjetáveisIBL.png';
 import nutricaoImg from '../assets/NutriçãoIBL.png';
 import clinicaImg from '../assets/MedicinaIBL.jpg'; 
 import psicologiaImg from '../assets/PsicologiaIBL.png';
-import enfermagemImg from '../assets/EnfermagemIBL.png'; // <-- Imagem da Enfermagem Adicionada
+import enfermagemImg from '../assets/EnfermagemIBL.png';
 
 export default function Especialidades() {
   const [activeTab, setActiveTab] = useState<number | null>(0);
 
+  // Corpo Clínico e Procedimentos 100% Atualizados
   const especialidades = [
     { 
       titulo: "Fisioterapia", 
-      descricao: "Retome o controle do seu corpo. Abordagem especializada para restaurar a mobilidade, aliviar a dor crônica e prevenir lesões com tecnologia de ponta.",
-      itens: ["Pélvica (Uroginecológica)", "Cardiorrespiratória", "Vestibular", "Traumato-ortopédica"],
+      corpoClinico: "Isabella, Pedro e Lisabelle",
+      descricao: "Retome o controle do seu corpo. Abordagem especializada para restaurar a mobilidade, aliviar a dor crônica e prevenir lesões.",
+      itens: [
+        "Pélvica (Uroginecológica) - Isabella", 
+        "Traumato-ortopédica - Pedro / Lisabelle",
+        "Cardiorespiratória", 
+        "Vestibular"
+      ],
       imagem: fisioImg,
       alt: "Sessão de fisioterapia especializada no Instituto Bodylife"
     },
     { 
       titulo: "Estética", 
-      descricao: "Sua beleza, sua identidade. Procedimentos minimamente invasivos de última geração para realçar suas características naturais e rejuvenescer com segurança e sutileza.",
-      itens: ["Botox e Preenchimento", "Bioestimuladores", "Fios de PDO", "Ultraforme MPT", "Lavieen ou Pisom", "Limpeza de pele"],
+      corpoClinico: "Rafaella",
+      descricao: "Sua beleza, sua identidade. Procedimentos de última geração para realçar suas características naturais e rejuvenescer com segurança.",
+      itens: [
+        "Botox",
+        "Preenchimento", 
+        "Fios de PDO",
+        "Bioestimuladores (Sculptra, Radiesse, Diamond, Elleva)", 
+        "Ultraforme MPT", 
+        "Lavieen ou Pisom", 
+        "Skimbooster", 
+        "Limpeza de pele"
+      ],
       imagem: esteticaImg,
       alt: "Tratamento de estética avançada facial"
     },
     { 
       titulo: "Pilates Clínico", 
-      descricao: "Fortaleça seu núcleo e liberte sua postura. O equilíbrio perfeito entre força, flexibilidade e consciência corporal sob supervisão de especialistas clínicos.",
+      corpoClinico: "Thiago e Lisabelle",
+      descricao: "Fortaleça seu núcleo e liberte sua postura. O equilíbrio perfeito entre força, flexibilidade e consciência corporal.",
       itens: ["Pilates Clínico", "Reabilitação", "Condicionamento Físico", "Correção Postural"],
       imagem: pilatesImg,
       alt: "Aula de Pilates Clínico focada em reabilitação"
     },
     { 
       titulo: "Acupuntura", 
-      descricao: "Harmonia milenar para a vida moderna. Alívio de dores, redução de ansiedade e restauração do equilíbrio energético através de protocolos clínicos precisos.",
+      corpoClinico: "Thiago",
+      descricao: "Harmonia milenar para a vida moderna. Alívio de dores, redução de ansiedade e restauração do equilíbrio energético.",
       itens: ["Tratamento de Dores", "Ansiedade e Estresse", "Equilíbrio Sistêmico", "Ventosaterapia"],
       imagem: acupunturaImg,
       alt: "Sessão de acupuntura para alívio de tensões"
     },
     { 
       titulo: "Injetáveis", 
-      descricao: "Otimize sua saúde de dentro para fora. Terapias endovenosas personalizadas para máxima absorção de nutrientes, energia, imunidade e performance esportiva.",
+      corpoClinico: "Luana",
+      descricao: "Otimize sua saúde de dentro para fora. Terapias endovenosas personalizadas para máxima absorção de nutrientes, imunidade e performance.",
       itens: ["Soroterapia", "Reposição Vitamínica", "Foco e Imunidade", "Acompanhamento Metabólico"],
       imagem: injetaveisImg,
       alt: "Aplicação de soroterapia e terapias injetáveis"
     },
     { 
       titulo: "Nutrição", 
-      descricao: "Abasteça seu corpo com inteligência. Planos nutricionais baseados em evidências científicas para emagrecimento, performance esportiva e longevidade.",
+      corpoClinico: "Artur, Felipe e Sandra",
+      descricao: "Abasteça seu corpo com inteligência. Planos nutricionais baseados em evidências científicas para a sua melhor versão.",
       itens: ["Nutrição Esportiva", "Funcional", "Nutrição Clínica", "Terceira idade"],
       imagem: nutricaoImg,
       alt: "Acompanhamento com nutricionista especializada"
     },
     { 
       titulo: "Clínica Médica", 
-      descricao: "Sua saúde sob coordenação integral. Diagnósticos precisos, medicina preventiva e acompanhamento contínuo por médicos focados na sua qualidade de vida.",
+      corpoClinico: "Dra. Nádyla",
+      descricao: "Sua saúde sob coordenação integral. Diagnósticos precisos, medicina preventiva e acompanhamento contínuo focado na sua qualidade de vida.",
       itens: ["Consultas de Rotina", "Check-up", "Acompanhamento Preventivo"],
       imagem: clinicaImg,
       alt: "Consulta médica preventiva no Instituto Bodylife"
     },
     { 
       titulo: "Enfermagem", 
-      descricao: "Cuidado contínuo, técnico e humanizado. Nossa equipe de enfermagem garante suporte integral, segurança nos procedimentos e acompanhamento de excelência.",
+      corpoClinico: "Luana",
+      descricao: "Cuidado contínuo, técnico e humanizado. Nossa equipe garante suporte integral, segurança nos procedimentos e acompanhamento de excelência.",
       itens: ["Triagem e Acolhimento", "Curativos Especiais", "Administração de Terapias", "Suporte Clínico"],
       imagem: enfermagemImg,
       alt: "Atendimento e suporte de enfermagem acolhedor"
     },
     { 
       titulo: "Psicologia", 
-      descricao: "Invista na sua maior força: sua mente. Um espaço acolhedor e confidencial para desenvolver inteligência emocional, superar desafios e viver com clareza.",
+      corpoClinico: "Julia",
+      descricao: "Invista na sua maior força: sua mente. Um espaço acolhedor e confidencial para desenvolver inteligência emocional e superar desafios.",
       itens: ["Terapia Individual", "Gestão de Estresse", "Desenvolvimento Pessoal"],
       imagem: psicologiaImg,
       alt: "Atendimento psicológico acolhedor"
@@ -92,13 +116,15 @@ export default function Especialidades() {
             <Activity size={18} />
             Abordagem Completa
           </span>
-          <h2 id="titulo-especialidades" className="text-4xl md:text-5xl lg:text-6xl font-black text-bodylife-dark uppercase tracking-tighter leading-tight">
+          <h2 id="titulo-especialidades" className="text-4xl md:text-5xl lg:text-6xl font-bold text-bodylife-dark uppercase tracking-tighter leading-tight">
             Nossas Especialidades
           </h2>
           <div className="h-1.5 w-24 bg-bodylife-red mx-auto mt-6 rounded-full"></div>
         </div>
 
-        {/* VERSÃO MOBILE (Ajustada) */}
+        {/* ========================================= */}
+        {/* VERSÃO MOBILE (Acordeão)                  */}
+        {/* ========================================= */}
         <div className="lg:hidden flex flex-col gap-4 reveal delay-100" role="tablist">
           {especialidades.map((esp, index) => {
             const isActive = activeTab === index;
@@ -124,6 +150,13 @@ export default function Especialidades() {
                 >
                   <div className="overflow-hidden">
                     <div className="p-5 md:p-6 bg-white border-t border-gray-50">
+                      
+                      {/* Badge do Profissional no Mobile */}
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-bodylife-base border border-gray-200 rounded-lg mb-4">
+                        <User size={16} className="text-bodylife-red" />
+                        <span className="text-sm font-bold text-bodylife-dark">Com: {esp.corpoClinico}</span>
+                      </div>
+
                       <div className="w-full h-64 md:h-80 bg-bodylife-base rounded-xl mb-6 overflow-hidden">
                         <img 
                           src={esp.imagem} 
@@ -132,13 +165,13 @@ export default function Especialidades() {
                           className="w-full h-full object-contain" 
                         />
                       </div>
-                      <p className="text-gray-600 font-medium text-sm md:text-base mb-6 leading-relaxed">
+                      <p className="text-gray-600 font-bold text-sm md:text-base mb-6 leading-relaxed">
                         {esp.descricao}
                       </p>
                       
                       <div className="space-y-3 mb-8">
                         {esp.itens.map((item, i) => (
-                          <div key={i} className="flex items-start text-sm md:text-base font-semibold text-bodylife-dark bg-gray-50 p-3 rounded-lg border border-gray-100">
+                          <div key={i} className="flex items-start text-sm md:text-base font-bold text-bodylife-dark bg-gray-50 p-3 rounded-lg border border-gray-100">
                             <CheckCircle2 className="w-5 h-5 text-bodylife-red mr-3 shrink-0 mt-0.5" />
                             {item}
                           </div>
@@ -162,7 +195,9 @@ export default function Especialidades() {
           })}
         </div>
 
-        {/* VERSÃO DESKTOP (Ajustada) */}
+        {/* ========================================= */}
+        {/* VERSÃO DESKTOP (Vitrine Interativa)       */}
+        {/* ========================================= */}
         <div className="hidden lg:flex flex-row gap-12 reveal delay-100">
           <div className="w-1/3 flex flex-col gap-3" role="tablist" aria-orientation="vertical">
             {especialidades.map((esp, index) => {
@@ -180,7 +215,7 @@ export default function Especialidades() {
                       : 'bg-white text-gray-500 border-gray-100 hover:bg-gray-50 hover:text-bodylife-dark hover:border-gray-300'
                   }`}
                 >
-                  <span className={`font-black text-base xl:text-lg tracking-tight transition-colors ${isActive ? 'text-white' : 'text-bodylife-dark group-hover:text-bodylife-red'}`}>
+                  <span className={`font-bold text-base xl:text-lg tracking-tight transition-colors ${isActive ? 'text-white' : 'text-bodylife-dark group-hover:text-bodylife-red'}`}>
                     {esp.titulo}
                   </span>
                   <ChevronRight size={20} className={`transition-all duration-300 ${isActive ? 'translate-x-1 text-white opacity-100' : 'text-gray-300 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-bodylife-red'}`} />
@@ -205,15 +240,20 @@ export default function Especialidades() {
                   decoding="async"
                   className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-out" 
                 />
-                <div className="absolute bottom-6 left-8 z-20">
-                  <h3 className="text-4xl font-black text-bodylife-dark tracking-tight drop-shadow-sm bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/50">
+                <div className="absolute bottom-6 left-8 z-20 flex flex-col items-start gap-2">
+                  <h3 className="text-4xl font-bold text-bodylife-dark tracking-tight drop-shadow-sm bg-white/90 backdrop-blur-sm px-5 py-2.5 rounded-xl border border-white/50">
                     {activeEspecialidade.titulo}
                   </h3>
+                  {/* Badge do Profissional no Desktop */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-bodylife-red/90 backdrop-blur-sm text-white rounded-lg shadow-lg">
+                    <User size={18} />
+                    <span className="text-sm font-bold">Com: {activeEspecialidade.corpoClinico}</span>
+                  </div>
                 </div>
               </div>
 
               <div className="p-10 flex flex-col flex-1">
-                <p className="text-gray-600 text-lg xl:text-xl leading-relaxed font-medium mb-10">
+                <p className="text-gray-600 text-lg xl:text-xl leading-relaxed font-bold mb-10">
                   {activeEspecialidade.descricao}
                 </p>
                 
@@ -221,13 +261,14 @@ export default function Especialidades() {
                   Tratamentos & Procedimentos Inclusos:
                 </h4>
                 
-                <div className="grid grid-cols-2 gap-4 mb-12">
+                {/* Grid adaptado para lidar com muitos itens sem amassar */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                   {activeEspecialidade.itens.map((item, i) => (
                     <div key={i} className="flex items-center bg-bodylife-base p-4 rounded-xl border border-gray-100 hover:border-bodylife-red/30 transition-colors">
-                      <div className="bg-white p-1 rounded-full mr-3 shadow-sm">
+                      <div className="bg-white p-1 rounded-full mr-3 shadow-sm shrink-0">
                         <CheckCircle2 className="w-5 h-5 text-bodylife-red" />
                       </div>
-                      <span className="text-bodylife-dark font-bold text-sm">{item}</span>
+                      <span className="text-bodylife-dark font-bold text-sm leading-snug">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -237,7 +278,7 @@ export default function Especialidades() {
                     href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20ou%20saber%20mais%20sobre%20${activeEspecialidade.titulo}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full gap-3 bg-bodylife-red text-white py-5 xl:py-6 rounded-2xl font-black text-lg hover:bg-red-700 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(211,47,47,0.3)] hover:shadow-[0_15px_50px_rgba(211,47,47,0.5)] group/btn"
+                    className="flex items-center justify-center w-full gap-3 bg-bodylife-red text-white py-5 xl:py-6 rounded-2xl font-bold text-lg hover:bg-red-700 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(211,47,47,0.3)] hover:shadow-[0_15px_50px_rgba(211,47,47,0.5)] group/btn"
                   >
                     <MessageCircle size={26} className="group-hover/btn:animate-bounce" />
                     AGENDAR CONSULTA DE {activeEspecialidade.titulo.toUpperCase()}

@@ -17,8 +17,7 @@ export default function Convenios() {
   const linha2 = [...convenios.slice(metade), ...convenios.slice(metade)];
 
   return (
-    // Tag semântica com aria-labelledby para acessibilidade máxima
-    <section aria-labelledby="titulo-convenios" className="w-full py-24 bg-white overflow-hidden border-t border-gray-50">
+    <section id="convenios" aria-labelledby="titulo-convenios" className="w-full py-24 bg-white overflow-hidden border-t border-gray-50">
       
       {/* Cabeçalho com Reveal */}
       <div className="max-w-7xl mx-auto px-4 text-center mb-16 reveal">
@@ -26,7 +25,7 @@ export default function Convenios() {
           <HeartHandshake size={18} />
           Facilidade para você
         </span>
-        <h2 id="titulo-convenios" className="text-4xl md:text-5xl lg:text-6xl font-black text-bodylife-dark uppercase tracking-tighter mb-6">
+        <h2 id="titulo-convenios" className="text-4xl md:text-5xl lg:text-6xl font-bold text-bodylife-dark uppercase tracking-tighter mb-6">
           Convênios Atendidos
         </h2>
         <div className="h-1.5 w-24 bg-bodylife-red mx-auto rounded-full"></div>
@@ -35,24 +34,21 @@ export default function Convenios() {
         </p>
       </div>
 
-      {/* TRUQUE SEO/A11Y MASTER LEVEL:
-        Lista estruturada semanticamente exclusiva para Google Bots e Leitores de Tela.
-        Fica invisível visualmente, mas é perfeitamente lida pelas máquinas.
-      */}
+      {/* TRUQUE SEO/A11Y MASTER LEVEL */}
       <ul className="sr-only">
         {convenios.map((convenio, index) => (
           <li key={`sr-${index}`}>{convenio}</li>
         ))}
       </ul>
 
-      {/* Container das Faixas Visuais de Convênios (aria-hidden esconde dos leitores de tela para não duplicar áudio) */}
+      {/* Container das Faixas Visuais de Convênios */}
       <div aria-hidden="true" className="w-full relative py-10 bg-bodylife-base border-y border-gray-100 flex flex-col gap-6 lg:gap-8 reveal delay-100">
         
         {/* Sombras laterais premium (Fade Out) */}
         <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-bodylife-base to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-bodylife-base to-transparent z-10 pointer-events-none"></div>
 
-        {/* Linha 1 (Animação para a esquerda, forçando GPU com will-change-transform) */}
+        {/* Linha 1 */}
         <div className="animate-scroll flex gap-4 md:gap-6 px-4 w-max will-change-transform">
           {linha1.map((convenio, index) => (
             <div 
@@ -67,7 +63,7 @@ export default function Convenios() {
           ))}
         </div>
 
-        {/* Linha 2 (Animação para a direita, forçando GPU) */}
+        {/* Linha 2 */}
         <div className="animate-scroll-reverse flex gap-4 md:gap-6 px-4 w-max will-change-transform">
           {linha2.map((convenio, index) => (
             <div 
@@ -85,14 +81,14 @@ export default function Convenios() {
 
       {/* CTA de Captura de Leads (Design UI Refinado) */}
       <div className="max-w-5xl mx-auto px-4 mt-20 reveal delay-200">
-        <div className="bg-gradient-to-br from-bodylife-dark to-gray-900 rounded-3xl p-8 lg:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden border border-gray-800">
+        <div className="bg-gradient-to-br from-bodylife-dark to-gray-800 rounded-3xl p-8 lg:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden border border-gray-700">
           
           {/* Efeito abstrato de luz no fundo do Card */}
           <div className="absolute top-[-50%] right-[-10%] w-[60%] h-[200%] bg-bodylife-red/10 rotate-12 blur-3xl pointer-events-none"></div>
           
           <div className="text-center md:text-left relative z-10 space-y-3">
-            <h3 className="text-3xl font-black text-white tracking-tight">Não encontrou o seu convênio?</h3>
-            <p className="text-gray-400 font-medium text-lg md:text-xl max-w-xl">
+            <h3 className="text-3xl font-bold text-white tracking-tight">Não encontrou o seu convênio?</h3>
+            <p className="text-gray-300 font-bold text-lg md:text-xl max-w-xl">
               Temos soluções flexíveis! Verifique a disponibilidade, parcerias ou opções de reembolso diretamente com nossa equipe de recepção.
             </p>
           </div>
