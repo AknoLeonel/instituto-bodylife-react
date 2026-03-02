@@ -7,19 +7,19 @@ export default function Convenios() {
   // ========================================================================
   const convenios = [
     { nome: "AFEB", logo: "/convenios/afeb.png" },
-    { nome: "BACEN", logo: "/convenios/bacen.png" },
+    { nome: "BACEN", logo: "/convenios/banco.webp" },
     { nome: "BNDES", logo: "/convenios/bndes.jpg" },
     { nome: "CAESAN", logo: "/convenios/caesan.webp" },
     { nome: "CAPESESP", logo: "/convenios/capesesp.png" },
-    { nome: "CODEVASF", logo: "/convenios/codevasf.webp" },
+    { nome: "CODEVASF", logo: "/convenios/codes.webp" },
     { nome: "CONAB", logo: "/convenios/conab.png" },
     { nome: "EMBRATEL/TELOS", logo: "/convenios/embratel.png" },
     { nome: "FASCAL", logo: "/convenios/fascal.webp" },
     { nome: "FUSEX", logo: "/convenios/fusex.webp" },
-    { nome: "INAS-GDF", logo: "/convenios/inas.png" },
+    { nome: "INAS-GDF", logo: "/convenios/inas.jpg" },
     { nome: "LUMINAR", logo: "/convenios/luminar.png" },
     { nome: "NOTRE DAME", logo: "/convenios/notre.webp" },
-    { nome: "NOVA SAÚDE", logo: "/convenios/novasaude.png" },
+    { nome: "NOVA SAÚDE", logo: "/convenios/nova.png" },
     { nome: "OMINT", logo: "/convenios/omint.png" },
     { nome: "PF SAÚDE", logo: "/convenios/pf.webp" },
     { nome: "PLAN-ASSISTE", logo: "/convenios/plan.png" },
@@ -33,10 +33,10 @@ export default function Convenios() {
     { nome: "STM", logo: "/convenios/stm.png" },
     { nome: "TER", logo: "/convenios/ter.png" },
     { nome: "TJDFT", logo: "/convenios/tjdft.png" },
-    { nome: "TRF", logo: "/convenios/trf.png" },
+    { nome: "TRF", logo: "/convenios/trf.webp" },
     { nome: "TRT", logo: "/convenios/trt.png" },
     { nome: "TST", logo: "/convenios/tst.webp" },
-    { nome: "UNAFISCO", logo: "/convenios/unafisco.png" },
+    { nome: "UNAFISCO", logo: "/convenios/saude.webp" },
     { nome: "UNIMED VTRP", logo: "/convenios/unimed.webp" }
   ];
 
