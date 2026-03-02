@@ -1,6 +1,6 @@
 // Importação das Imagens Reais da Estrutura
-import fachadaImg from '../assets/EstruturaFachada1.png';
-import recepcaoImg from '../assets/EstruturaRecepção.png';
+import fachadaImg from '../assets/EstruturaFachada2.png';
+import recepcaoImg from '../assets/EstruturaRecepção2.png';
 import esperaImg from '../assets/EstruturaSaladeEspera.png';
 import pilatesImg from '../assets/EstruturaPilates.png';
 import fisioImg from '../assets/EstruturaFisio2.png';

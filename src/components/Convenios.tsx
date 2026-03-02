@@ -22,7 +22,7 @@ export default function Convenios() {
     { nome: "NOVA SAÚDE", logo: "/convenios/novasaude.png" },
     { nome: "OMINT", logo: "/convenios/omint.png" },
     { nome: "PF SAÚDE", logo: "/convenios/pf.webp" },
-    { nome: "PLAN-ASSISTE", logo: "/convenios/plan.webp" },
+    { nome: "PLAN-ASSISTE", logo: "/convenios/plan.png" },
     { nome: "POSTAL SAÚDE", logo: "/convenios/postal.png" },
     { nome: "REAL GRANDEZA", logo: "/convenios/real.png" },
     { nome: "SAMP/AGMP", logo: "/convenios/samp.jpeg" },
