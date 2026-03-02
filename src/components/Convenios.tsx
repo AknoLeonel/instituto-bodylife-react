@@ -89,7 +89,7 @@ export default function Convenios() {
           <div className="text-center md:text-left relative z-10 space-y-3">
             <h3 className="text-3xl font-bold text-white tracking-tight">Não encontrou o seu convênio?</h3>
             <p className="text-gray-300 font-bold text-lg md:text-xl max-w-xl">
-              Temos soluções flexíveis! Verifique a disponibilidade, parcerias ou opções de reembolso diretamente com nossa equipe de recepção.
+              Temos soluções flexíveis! Verifique a disponibilidade, com nossa equipe de recepção.
             </p>
           </div>
           
