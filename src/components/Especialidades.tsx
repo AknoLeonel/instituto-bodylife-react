@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MessageCircle, CheckCircle2, ChevronRight, ChevronDown, Activity, User } from 'lucide-react';
+import { MessageCircle, CheckCircle2, ChevronRight, ChevronDown, Activity } from 'lucide-react';
 
 // Importação das Imagens Reais (Pente Fino)
 import fisioImg from '../assets/FisioterapiaIBL.png';
@@ -15,15 +15,13 @@ import enfermagemImg from '../assets/EnfermagemIBL.png';
 export default function Especialidades() {
   const [activeTab, setActiveTab] = useState<number | null>(0);
 
-  // Corpo Clínico e Procedimentos 100% Atualizados
+  // Array limpo, focando apenas no que vai aparecer na tela (Performance)
   const especialidades = [
     { 
       titulo: "Fisioterapia", 
-      corpoClinico: "Isabella, Pedro e Lisabelle",
-      descricao: "Retome o controle do seu corpo. Abordagem especializada para restaurar a mobilidade, aliviar a dor crônica e prevenir lesões.",
       itens: [
-        "Pélvica (Uroginecológica) - Isabella", 
-        "Traumato-ortopédica - Pedro / Lisabelle",
+        "Pélvica (Uroginecológica)", 
+        "Traumato-ortopédica",
         "Cardiorespiratória", 
         "Vestibular"
       ],
@@ -32,8 +30,6 @@ export default function Especialidades() {
     },
     { 
       titulo: "Estética", 
-      corpoClinico: "Rafaella",
-      descricao: "Sua beleza, sua identidade. Procedimentos de última geração para realçar suas características naturais e rejuvenescer com segurança.",
       itens: [
         "Botox",
         "Preenchimento", 
@@ -48,57 +44,43 @@ export default function Especialidades() {
       alt: "Tratamento de estética avançada facial"
     },
     { 
-      titulo: "Pilates Clínico", 
-      corpoClinico: "Thiago e Lisabelle",
-      descricao: "Fortaleça seu núcleo e liberte sua postura. O equilíbrio perfeito entre força, flexibilidade e consciência corporal.",
+      titulo: "Pilates", 
       itens: ["Pilates Clínico", "Reabilitação", "Condicionamento Físico", "Correção Postural"],
       imagem: pilatesImg,
-      alt: "Aula de Pilates Clínico focada em reabilitação"
+      alt: "Aula de Pilates focada em reabilitação"
     },
     { 
       titulo: "Acupuntura", 
-      corpoClinico: "Thiago",
-      descricao: "Harmonia milenar para a vida moderna. Alívio de dores, redução de ansiedade e restauração do equilíbrio energético.",
       itens: ["Tratamento de Dores", "Ansiedade e Estresse", "Equilíbrio Sistêmico", "Ventosaterapia"],
       imagem: acupunturaImg,
       alt: "Sessão de acupuntura para alívio de tensões"
     },
     { 
       titulo: "Injetáveis", 
-      corpoClinico: "Luana",
-      descricao: "Otimize sua saúde de dentro para fora. Terapias endovenosas personalizadas para máxima absorção de nutrientes, imunidade e performance.",
       itens: ["Soroterapia", "Reposição Vitamínica", "Foco e Imunidade", "Acompanhamento Metabólico"],
       imagem: injetaveisImg,
       alt: "Aplicação de soroterapia e terapias injetáveis"
     },
     { 
       titulo: "Nutrição", 
-      corpoClinico: "Artur, Felipe e Sandra",
-      descricao: "Abasteça seu corpo com inteligência. Planos nutricionais baseados em evidências científicas para a sua melhor versão.",
       itens: ["Nutrição Esportiva", "Funcional", "Nutrição Clínica", "Terceira idade"],
       imagem: nutricaoImg,
       alt: "Acompanhamento com nutricionista especializada"
     },
     { 
       titulo: "Clínica Médica", 
-      corpoClinico: "Dra. Nádyla",
-      descricao: "Sua saúde sob coordenação integral. Diagnósticos precisos, medicina preventiva e acompanhamento contínuo focado na sua qualidade de vida.",
       itens: ["Consultas de Rotina", "Check-up", "Acompanhamento Preventivo"],
       imagem: clinicaImg,
       alt: "Consulta médica preventiva no Instituto Bodylife"
     },
     { 
       titulo: "Enfermagem", 
-      corpoClinico: "Luana",
-      descricao: "Cuidado contínuo, técnico e humanizado. Nossa equipe garante suporte integral, segurança nos procedimentos e acompanhamento de excelência.",
       itens: ["Triagem e Acolhimento", "Curativos Especiais", "Administração de Terapias", "Suporte Clínico"],
       imagem: enfermagemImg,
       alt: "Atendimento e suporte de enfermagem acolhedor"
     },
     { 
       titulo: "Psicologia", 
-      corpoClinico: "Julia",
-      descricao: "Invista na sua maior força: sua mente. Um espaço acolhedor e confidencial para desenvolver inteligência emocional e superar desafios.",
       itens: ["Terapia Individual", "Gestão de Estresse", "Desenvolvimento Pessoal"],
       imagem: psicologiaImg,
       alt: "Atendimento psicológico acolhedor"
@@ -123,7 +105,7 @@ export default function Especialidades() {
         </div>
 
         {/* ========================================= */}
-        {/* VERSÃO MOBILE (Acordeão)                  */}
+        {/* VERSÃO MOBILE                             */}
         {/* ========================================= */}
         <div className="lg:hidden flex flex-col gap-4 reveal delay-100" role="tablist">
           {especialidades.map((esp, index) => {
@@ -151,12 +133,6 @@ export default function Especialidades() {
                   <div className="overflow-hidden">
                     <div className="p-5 md:p-6 bg-white border-t border-gray-50">
                       
-                      {/* Badge do Profissional no Mobile */}
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-bodylife-base border border-gray-200 rounded-lg mb-4">
-                        <User size={16} className="text-bodylife-red" />
-                        <span className="text-sm font-bold text-bodylife-dark">Com: {esp.corpoClinico}</span>
-                      </div>
-
                       <div className="w-full h-64 md:h-80 bg-bodylife-base rounded-xl mb-6 overflow-hidden">
                         <img 
                           src={esp.imagem} 
@@ -165,10 +141,11 @@ export default function Especialidades() {
                           className="w-full h-full object-contain" 
                         />
                       </div>
-                      <p className="text-gray-600 font-bold text-sm md:text-base mb-6 leading-relaxed">
-                        {esp.descricao}
-                      </p>
                       
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+                        Especialidades
+                      </h4>
+
                       <div className="space-y-3 mb-8">
                         {esp.itens.map((item, i) => (
                           <div key={i} className="flex items-start text-sm md:text-base font-bold text-bodylife-dark bg-gray-50 p-3 rounded-lg border border-gray-100">
@@ -179,13 +156,13 @@ export default function Especialidades() {
                       </div>
                       
                       <a 
-                        href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20${esp.titulo}.`}
+                        href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação%20para%20${esp.titulo}.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center justify-center w-full gap-2 bg-bodylife-red text-white py-4 md:py-5 rounded-xl font-bold active:scale-95 transition-all shadow-lg shadow-red-500/20 hover:bg-red-700"
                       >
                         <MessageCircle size={22} className="group-hover:animate-bounce" />
-                        Agendar {esp.titulo}
+                        Agendar Avaliação
                       </a>
                     </div>
                   </div>
@@ -196,7 +173,7 @@ export default function Especialidades() {
         </div>
 
         {/* ========================================= */}
-        {/* VERSÃO DESKTOP (Vitrine Interativa)       */}
+        {/* VERSÃO DESKTOP                            */}
         {/* ========================================= */}
         <div className="hidden lg:flex flex-row gap-12 reveal delay-100">
           <div className="w-1/3 flex flex-col gap-3" role="tablist" aria-orientation="vertical">
@@ -244,24 +221,16 @@ export default function Especialidades() {
                   <h3 className="text-4xl font-bold text-bodylife-dark tracking-tight drop-shadow-sm bg-white/90 backdrop-blur-sm px-5 py-2.5 rounded-xl border border-white/50">
                     {activeEspecialidade.titulo}
                   </h3>
-                  {/* Badge do Profissional no Desktop */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-bodylife-red/90 backdrop-blur-sm text-white rounded-lg shadow-lg">
-                    <User size={18} />
-                    <span className="text-sm font-bold">Com: {activeEspecialidade.corpoClinico}</span>
-                  </div>
                 </div>
               </div>
 
               <div className="p-10 flex flex-col flex-1">
-                <p className="text-gray-600 text-lg xl:text-xl leading-relaxed font-bold mb-10">
-                  {activeEspecialidade.descricao}
-                </p>
                 
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
-                  Tratamentos & Procedimentos Inclusos:
+                  Especialidades
                 </h4>
                 
-                {/* Grid adaptado para lidar com muitos itens sem amassar */}
+                {/* Grid adaptado */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                   {activeEspecialidade.itens.map((item, i) => (
                     <div key={i} className="flex items-center bg-bodylife-base p-4 rounded-xl border border-gray-100 hover:border-bodylife-red/30 transition-colors">
@@ -275,13 +244,13 @@ export default function Especialidades() {
                 
                 <div className="mt-auto pt-6 border-t border-gray-100">
                   <a 
-                    href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20ou%20saber%20mais%20sobre%20${activeEspecialidade.titulo}.`}
+                    href={`https://wa.me/5561998796606?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação%20para%20${activeEspecialidade.titulo}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-full gap-3 bg-bodylife-red text-white py-5 xl:py-6 rounded-2xl font-bold text-lg hover:bg-red-700 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(211,47,47,0.3)] hover:shadow-[0_15px_50px_rgba(211,47,47,0.5)] group/btn"
                   >
                     <MessageCircle size={26} className="group-hover/btn:animate-bounce" />
-                    AGENDAR CONSULTA DE {activeEspecialidade.titulo.toUpperCase()}
+                    AGENDAR AVALIAÇÃO
                   </a>
                 </div>
               </div>

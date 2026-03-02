@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X, Mail } from 'lucide-react';
+import { MessageCircle, Menu, X, Mail, Instagram } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
@@ -50,10 +50,7 @@ export default function Navbar() {
             alt="Logo Instituto Bodylife" 
             className={`object-contain shrink-0 transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-14 h-14'}`}
           />
-          <div className="flex flex-col">
-            <span className="text-bodylife-red font-bold text-[10px] sm:text-xs tracking-widest uppercase leading-none mb-1 group-hover:text-red-400 transition-colors">Instituto</span>
-            <span className="text-bodylife-dark font-black text-xl sm:text-2xl tracking-tighter leading-none group-hover:text-gray-700 transition-colors">BODYLIFE</span>
-          </div>
+          
         </a>
 
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -76,6 +73,28 @@ export default function Navbar() {
             Trabalhe Conosco
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-bodylife-red transition-all duration-300 group-hover:w-full"></span>
           </a>
+
+          {/* NOVOS ÍCONES DE APPS (Instagram e WhatsApp) */}
+          <div className="flex items-center gap-3 ml-2 border-l border-gray-200 pl-4">
+            <a 
+              href="https://instagram.com/institutobodylife" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-bodylife-red transition-colors group"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} className="group-hover:scale-110 transition-transform" />
+            </a>
+            <a 
+              href="https://wa.me/5561998796606" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-bodylife-red transition-colors group"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
+            </a>
+          </div>
         </div>
 
         <div className="flex items-center gap-4 z-50">
@@ -137,17 +156,31 @@ export default function Navbar() {
             Trabalhe Conosco
           </a>
 
+          {/* Redes Sociais Mobile */}
+          <div 
+            style={{
+              transitionDelay: isOpen ? `${(navLinks.length + 1) * 50}ms` : '0ms',
+              transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+              opacity: isOpen ? 1 : 0
+            }}
+            className="flex gap-6 mt-4 mb-2"
+          >
+            <a href="https://instagram.com/institutobodylife" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-bodylife-red">
+              <Instagram size={28} />
+            </a>
+          </div>
+
           <a
             href="https://wa.me/5561998796606?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta!"
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
             style={{
-              transitionDelay: isOpen ? `${(navLinks.length + 1) * 50}ms` : '0ms',
+              transitionDelay: isOpen ? `${(navLinks.length + 2) * 50}ms` : '0ms',
               transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
               opacity: isOpen ? 1 : 0
             }}
-            className="flex items-center justify-center gap-3 bg-bodylife-red text-white w-full py-5 rounded-2xl font-black text-xl mt-8 shadow-[0_10px_30px_rgba(211,47,47,0.3)] active:scale-95 transition-all duration-300"
+            className="flex items-center justify-center gap-3 bg-bodylife-red text-white w-full py-5 rounded-2xl font-black text-xl mt-4 shadow-[0_10px_30px_rgba(211,47,47,0.3)] active:scale-95 transition-all duration-300"
           >
             <MessageCircle size={26} />
             Agendar Consulta

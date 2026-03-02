@@ -1,4 +1,4 @@
-import { Target, Heart, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import { Target, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
 
 // Importação da Imagem Real da Estrutura
 import recepcaoImg from '../assets/EstruturaRecepção.png';
@@ -55,10 +55,7 @@ export default function Sobre() {
           
           {/* Cabeçalho do Texto */}
           <div className="reveal delay-100">
-            <span className="text-bodylife-red font-bold tracking-widest uppercase text-sm mb-4 flex items-center gap-2">
-              <Sparkles size={16} />
-              O Instituto
-            </span>
+            {/* O "O Instituto" que ficava aqui foi removido conforme solicitado */}
             <h2 id="titulo-sobre" className="text-4xl md:text-5xl lg:text-6xl font-bold text-bodylife-dark tracking-tighter leading-[1.05]">
               Cuidado Completo e <br className="hidden md:block"/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-bodylife-red to-red-600 drop-shadow-sm font-bold">
@@ -111,7 +108,7 @@ export default function Sobre() {
               href="#especialidades" 
               className="inline-flex items-center gap-2.5 font-bold text-bodylife-red hover:text-red-800 transition-all duration-300 group text-lg bg-bodylife-red/5 hover:bg-bodylife-red/10 px-6 py-3 rounded-xl"
             >
-              Conhecer nosso corpo clínico
+              Conheça nosso corpo clínico
               <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform duration-300" />
             </a>
           </div>
