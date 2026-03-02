@@ -14,10 +14,6 @@ export default function FAQ() {
       resposta: "Pensando na sua comodidade, nosso agendamento é feito de forma rápida e humanizada. Você pode agendar sua avaliação diretamente pelo nosso WhatsApp oficial ou ligando pelo telefone. Nossa equipe de recepção te ajudará a encontrar o melhor horário."
     },
     {
-      pergunta: "Vocês atendem pacientes de todas as idades?",
-      resposta: "Focamos nosso atendimento especializado em adolescentes a partir de 12 anos, adultos e idosos. Atualmente, não possuímos profissionais voltados para o atendimento de crianças pequenas (pediatria)."
-    },
-    {
       pergunta: "Quais são os horários de funcionamento?",
       resposta: "Estamos abertos de Segunda a Sexta-feira, das 07h às 19h. Recomendamos que agende sua avaliação com antecedência para garantir o horário que melhor se adapta à sua rotina."
     }
