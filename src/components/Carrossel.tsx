@@ -1,36 +1,51 @@
-// Importação das Imagens Reais da Estrutura
+// Importação de todas as Imagens Reais da Estrutura
 import fachadaImg from '../assets/EstruturaFachada2.png';
+import entradaImg from '../assets/EstruturaEntrada.png';
 import recepcaoImg from '../assets/EstruturaRecepção2.png';
 import esperaImg from '../assets/EstruturaSaladeEspera.png';
 import pilatesImg from '../assets/EstruturaPilates.png';
-import fisioImg from '../assets/EstruturaFisio2.png';
+import fisioImg from '../assets/EstruturaFisioterapia.png';
+import fisioImg2 from '../assets/EstruturaFisio2.png';
+import acupunturaImg from '../assets/EstruturaSaladeAcupuntura.png';
+import auriculoterapiaImg from '../assets/EstruturaFisio2.png';
 
 export default function Carrossel() {
   const espacos = [
     {
       url: fachadaImg,
-      alt: "Fachada moderna do Instituto Bodylife no Guará",
-      legenda: "Nossa Fachada"
+      alt: "Fachada moderna do Instituto Bodylife no Guará"
+    },
+    {
+      url: entradaImg,
+      alt: "Entrada do Instituto Bodylife"
     },
     {
       url: recepcaoImg,
-      alt: "Recepção moderna e acolhedora do Instituto Bodylife",
-      legenda: "Recepção Acolhedora"
+      alt: "Recepção moderna e acolhedora do Instituto Bodylife"
     },
     {
       url: esperaImg,
-      alt: "Sala de espera confortável e climatizada",
-      legenda: "Sala de Espera"
+      alt: "Sala de espera confortável e climatizada"
     },
     {
       url: pilatesImg,
-      alt: "Estúdio de Pilates completo para reabilitação",
-      legenda: "Estúdio de Pilates"
+      alt: "Estúdio de Pilates completo para reabilitação"
     },
     {
       url: fisioImg,
-      alt: "Área de fisioterapia e reabilitação",
-      legenda: "Área de Fisioterapia"
+      alt: "Área de fisioterapia"
+    },
+    {
+      url: fisioImg2,
+      alt: "Equipamentos de reabilitação e fisioterapia"
+    },
+    {
+      url: acupunturaImg,
+      alt: "Sala reservada para Acupuntura"
+    },
+    {
+      url: auriculoterapiaImg,
+      alt: "Sala para Auriculoterapia"
     }
   ];
 
@@ -49,12 +64,13 @@ export default function Carrossel() {
 
       <div className="w-full relative py-4 reveal delay-100">
         
+        {/* Bordas com fade branco para efeito infinito */}
         <div className="absolute inset-y-0 left-0 w-20 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-20 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
         <div 
           className="flex w-max animate-scroll hover:[animation-play-state:paused]" 
-          style={{ animationDuration: '18s' }}
+          style={{ animationDuration: '35s' }} // Mais tempo pois agora temos mais fotos
         >
           {/* BLOCO 1 (Original) */}
           <div className="flex gap-6 pr-6">
@@ -70,13 +86,6 @@ export default function Carrossel() {
                   decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/90 via-bodylife-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <figcaption className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="w-8 h-1 bg-bodylife-red mb-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
-                  <span className="text-white font-bold text-xl md:text-2xl drop-shadow-lg tracking-tight">
-                    {espaco.legenda}
-                  </span>
-                </figcaption>
               </figure>
             ))}
           </div>
@@ -95,13 +104,6 @@ export default function Carrossel() {
                   decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/90 via-bodylife-dark/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <figcaption className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="w-8 h-1 bg-bodylife-red mb-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
-                  <span className="text-white font-bold text-xl md:text-2xl drop-shadow-lg tracking-tight">
-                    {espaco.legenda}
-                  </span>
-                </figcaption>
               </figure>
             ))}
           </div>
