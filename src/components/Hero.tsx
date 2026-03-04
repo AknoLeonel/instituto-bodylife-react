@@ -25,7 +25,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 font-bold max-w-lg leading-relaxed">
-            Mais do que tratar sintomas, cuidamos de você por completo. Fisioterapia, Estética, Nutrição e Medicina integradas em um só lugar.
+            Mais do que tratar sintomas, cuidamos de você por completo. Fisioterapia, Enfermagem, Estética, Nutrição e Medicina integradas em um só lugar.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">

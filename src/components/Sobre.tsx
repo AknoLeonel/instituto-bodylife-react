@@ -1,5 +1,4 @@
-import { Target, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
-
+import { Target, ShieldCheck, ArrowRight } from 'lucide-react';
 
 // Importação da Imagem Real da Estrutura
 import recepcaoImg from '../assets/EstruturaNome.png';
@@ -31,21 +30,6 @@ export default function Sobre() {
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-out"
             />
-          </div>
-          
-          <div 
-            className="absolute -bottom-6 left-4 right-4 sm:left-6 sm:right-auto sm:w-80 bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.15)] border border-white/60 z-20"
-            style={{ animation: 'float 6s ease-in-out infinite' }}
-          >
-             <div className="flex items-center gap-4">
-                <div className="bg-gradient-to-br from-bodylife-red/20 to-bodylife-red/5 p-4 rounded-full text-bodylife-red shrink-0 shadow-inner">
-                  <Heart size={32} className="fill-bodylife-red/20" />
-                </div>
-                <div>
-                  <p className="text-bodylife-dark font-bold text-lg sm:text-xl leading-tight tracking-tight">Cuidado Humanizado</p>
-                  <p className="text-gray-500 text-xs sm:text-sm mt-1 font-bold leading-snug">Sua qualidade de vida é a nossa maior prioridade.</p>
-                </div>
-             </div>
           </div>
         </div>
 
@@ -116,13 +100,6 @@ export default function Sobre() {
         </div>
 
       </div>
-
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-      `}</style>
     </section>
   );
 }
