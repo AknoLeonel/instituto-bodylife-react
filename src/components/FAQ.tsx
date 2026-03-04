@@ -6,16 +6,16 @@ export default function FAQ() {
 
   const faqs = [
     {
-      pergunta: "Quais convênios o Instituto Bodylife atende?",
-      resposta: "Atendemos uma ampla rede de convênios, incluindo: AFEB, BACEN, BNDES, CAESAN, CAPESESP, CODEVASF, CONAB, EMBRATEL/TELOS, FASCAL, FUSEX, INAS-GDF, LUMINAR, NOTRE DAME, NOVA SAÚDE, OMINT, PF SAÚDE, PLAN-ASSISTE, POSTAL SAÚDE, REAL GRANDEZA, SAMP/AGMP, SAÚDE CAIXA, SERPRO, SIS, STF-MED, STM, TER, TJDFT, TRF, TRT, TST, UNAFISCO e UNIMED VTRP."
+      pergunta: "Como funciona o agendamento de avaliações?",
+      resposta: "Pensando na sua comodidade, oferecemos um agendamento simples, rápido e humanizado. Você pode marcar sua avaliação pelo nosso WhatsApp oficial ou por telefone. Nossa equipe de recepção está preparada para orientar você e encontrar o melhor dia e horário para seu atendimento."
     },
     {
-      pergunta: "Como funciona o agendamento de avaliações?",
-      resposta: "Pensando na sua comodidade, nosso agendamento é feito de forma rápida e humanizada. Você pode agendar sua avaliação diretamente pelo nosso WhatsApp oficial ou ligando pelo telefone. Nossa equipe de recepção te ajudará a encontrar o melhor horário."
+      pergunta: "Quais convênios o Instituto Bodylife atende?",
+      resposta: "Atendemos uma ampla rede de convênios para oferecer mais comodidade e acessibilidade aos nossos pacientes. Trabalhamos com: AFEB, BACEN, BNDES, CAESAN, CAPESESP, CODEVASF, CONAB, EMBRATEL/TELOS, FASCAL, FUSEX, INAS-GDF, LUMINAR, NOTRE DAME, NOVA SAÚDE, OMINT, PF SAÚDE, PLAN-ASSISTE, POSTAL SAÚDE, REAL GRANDEZA, SAMP/AGMP, SAÚDE CAIXA, SERPRO, SIS, STF-MED, STM, TRE, TJDFT, TRF, TRT, TST, UNAFISCO e UNIMED VTRP. Caso tenha dúvidas sobre seu plano, nossa equipe está à disposição para verificar a cobertura e orientar você."
     },
     {
       pergunta: "Quais são os horários de funcionamento?",
-      resposta: "Estamos abertos de Segunda a Sexta-feira, das 07h às 19h. Recomendamos que agende sua avaliação com antecedência para garantir o horário que melhor se adapta à sua rotina."
+      resposta: "Atendemos de segunda a sexta-feira, das 7h às 19h. Para garantir o horário mais conveniente para você, recomendamos que o agendamento seja realizado com antecedência."
     }
   ];
 

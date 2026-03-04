@@ -1,10 +1,7 @@
 import { MessageCircle, HeartHandshake } from 'lucide-react';
 
 export default function Convenios() {
-  // ========================================================================
-  // ATENÇÃO AQUI: Ajuste o finalzinho (.png, .jpg, .webp) para bater 
-  // EXATAMENTE com o nome do arquivo que está na sua pasta public/convenios/
-  // ========================================================================
+  // Lista de convênios preservada com as exatas imagens e extensões que você configurou
   const convenios = [
     { nome: "AFEB", logo: "/convenios/afeb.png" },
     { nome: "BACEN", logo: "/convenios/banco.webp" },
@@ -31,7 +28,7 @@ export default function Convenios() {
     { nome: "SIS", logo: "/convenios/sis.webp" },
     { nome: "STF-MED", logo: "/convenios/stf.jpg" },
     { nome: "STM", logo: "/convenios/stm.png" },
-    { nome: "TER", logo: "/convenios/tre.webp" },
+    { nome: "TRE", logo: "/convenios/tre.webp" }, // Corrigido de TER para TRE
     { nome: "TJDFT", logo: "/convenios/tjdft.png" },
     { nome: "TRF", logo: "/convenios/trf.webp" },
     { nome: "TRT", logo: "/convenios/trt.png" },
@@ -39,11 +36,6 @@ export default function Convenios() {
     { nome: "UNAFISCO", logo: "/convenios/saude.webp" },
     { nome: "UNIMED VTRP", logo: "/convenios/unimed.webp" }
   ];
-
-  // Divisão matemática perfeita para as duas linhas do carrossel visual
-  const metade = Math.ceil(convenios.length / 2);
-  const linha1 = [...convenios.slice(0, metade), ...convenios.slice(0, metade)];
-  const linha2 = [...convenios.slice(metade), ...convenios.slice(metade)];
 
   return (
     <section id="convenios" aria-labelledby="titulo-convenios" className="w-full py-24 bg-white overflow-hidden border-t border-gray-50">
@@ -70,69 +62,35 @@ export default function Convenios() {
         ))}
       </ul>
 
-      {/* Container das Faixas Visuais de Convênios */}
-      <div aria-hidden="true" className="w-full relative py-10 bg-bodylife-base border-y border-gray-100 flex flex-col gap-6 lg:gap-8 reveal delay-100">
-        
-        {/* Sombras laterais premium (Fade Out) */}
-        <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-bodylife-base to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-bodylife-base to-transparent z-10 pointer-events-none"></div>
-
-        {/* Linha 1 */}
-        <div className="animate-scroll flex gap-4 md:gap-6 px-4 w-max will-change-transform">
-          {linha1.map((convenio, index) => (
-            <div 
-              key={`l1-${index}`} 
-              className="flex items-center justify-center w-40 h-20 px-6 bg-white rounded-2xl border border-gray-100 shadow-sm shrink-0 hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 cursor-default group"
-              title={convenio.nome}
-            >
-              <img 
-                src={convenio.logo} 
-                alt={`Logo ${convenio.nome}`}
-                loading="lazy"
-                decoding="async" 
-                className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
-                // BLINDAGEM: Se errar a extensão, esconde a imagem e mostra o texto
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  if (e.currentTarget.nextElementSibling) {
-                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
-                  }
-                }}
-              />
-              <span className="hidden font-bold text-gray-600 text-sm text-center">
-                {convenio.nome}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Linha 2 */}
-        <div className="animate-scroll-reverse flex gap-4 md:gap-6 px-4 w-max will-change-transform">
-          {linha2.map((convenio, index) => (
-            <div 
-              key={`l2-${index}`} 
-              className="flex items-center justify-center w-40 h-20 px-6 bg-white rounded-2xl border border-gray-100 shadow-sm shrink-0 hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 cursor-default group"
-              title={convenio.nome}
-            >
-              <img 
-                src={convenio.logo} 
-                alt={`Logo ${convenio.nome}`}
-                loading="lazy"
-                decoding="async" 
-                className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
-                // BLINDAGEM: Se errar a extensão, esconde a imagem e mostra o texto
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  if (e.currentTarget.nextElementSibling) {
-                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
-                  }
-                }}
-              />
-              <span className="hidden font-bold text-gray-600 text-sm text-center">
-                {convenio.nome}
-              </span>
-            </div>
-          ))}
+      {/* Grid Estático e Alinhado de Convênios */}
+      <div aria-hidden="true" className="w-full relative py-12 bg-bodylife-base border-y border-gray-100 reveal delay-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {convenios.map((convenio, index) => (
+              <div 
+                key={index} 
+                className="flex items-center justify-center h-24 px-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-bodylife-red/50 hover:shadow-lg transition-all duration-300 group"
+                title={convenio.nome}
+              >
+                <img 
+                  src={convenio.logo} 
+                  alt={`Logo ${convenio.nome}`}
+                  loading="lazy"
+                  decoding="async" 
+                  className="max-w-full max-h-[80%] object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.nextElementSibling) {
+                      (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
+                    }
+                  }}
+                />
+                <span className="hidden font-bold text-gray-600 text-sm text-center">
+                  {convenio.nome}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

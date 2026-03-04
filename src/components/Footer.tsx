@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Mail, Navigation, Instagram, Facebook, Heart } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, Navigation, Heart } from 'lucide-react';
 import logoImg from '../assets/logosemfun.png';
 
 export default function Footer() {
@@ -19,32 +19,13 @@ export default function Footer() {
           <div className="space-y-6 reveal">
             {/* Logo que funciona como botão Voltar ao Topo */}
             <a href="#inicio" aria-label="Voltar ao início do site" className="flex flex-col w-max group">
-              <img src={logoImg} alt="Logo do Instituto BodyLife" className="w-16 h-16 object-contain mb-2 group-hover:scale-105 transition-transform duration-300 origin-left" />
+              <img src={logoImg} alt="Logo do Instituto BodyLife" className="w-28 h-28 object-contain mb-2 group-hover:scale-105 transition-transform duration-300 origin-left" />
               <span className="text-bodylife-red font-bold text-xl leading-none group-hover:text-red-400 transition-colors">INSTITUTO</span>
               <span className="text-bodylife-dark font-black text-3xl tracking-tighter leading-none group-hover:text-gray-700 transition-colors">BODYLIFE</span>
             </a>
             <p className="text-gray-600 font-bold leading-relaxed text-sm pr-4">
               Centro de Saúde Integrada focado em promover movimento, recuperação e qualidade de vida através de tratamentos modernos.
             </p>
-            {/* Redes Sociais com Acessibilidade (aria-label) */}
-            <div className="flex items-center gap-4 pt-2">
-              <a 
-                href="https://instagram.com/institutobodylife" 
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Acesse nosso Instagram"
-                className="w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)] hover:-translate-y-1"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="#" 
-                aria-label="Acesse nossa página no Facebook"
-                className="w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:-translate-y-1"
-              >
-                <Facebook size={20} />
-              </a>
-            </div>
           </div>
 
           {/* Coluna 2: Contatos Rápidos */}
@@ -87,17 +68,17 @@ export default function Footer() {
           <div className="space-y-6 reveal delay-200">
             <h4 className="text-lg font-bold text-bodylife-dark uppercase tracking-wider flex items-center gap-2">
               <span className="w-4 h-1 bg-bodylife-red rounded-full"></span>
-              Visite-nos
+              Unidades
             </h4>
             
             <address className="space-y-5 not-italic">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-bodylife-red shrink-0 mt-1" />
                 <div>
-                  <p className="font-bold text-bodylife-dark text-lg">Unidade Guará</p>
+                  <p className="font-bold text-bodylife-dark text-lg">Unidade Guará 1</p>
                   <p className="text-sm text-gray-600 font-bold mt-1.5 leading-relaxed">
                     QI 08 cj I LT 74 <br/> 
-                    Guará - Brasília/DF <br/>
+                    Guará 1 - Brasília/DF <br/>
                     CEP: 71020-098
                   </p>
                 </div>

@@ -44,11 +44,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
 
         <a href="#inicio" className="flex items-center gap-3 z-50 relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-bodylife-red rounded-sm">
-          {/* LOGO BLINDADA */}
+          {/* LOGO AUMENTADA (Ajuste dos tamanhos w-20 h-20 para destaque) */}
           <img 
             src={logoImg} 
             alt="Logo Instituto Bodylife" 
-            className={`object-contain shrink-0 transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-14 h-14'}`}
+            className={`object-contain shrink-0 transition-all duration-500 ${isScrolled ? 'w-14 h-14' : 'w-20 h-20'}`}
           />
         </a>
 
@@ -65,8 +65,9 @@ export default function Navbar() {
             </a>
           ))}
 
+          {/* TRABALHE CONOSCO DIRECIONANDO PARA O FOOTER */}
           <a
-            href="mailto:selecao@institutobodylife.com.br"
+            href="#contato"
             className="flex items-center gap-1.5 text-sm font-bold text-gray-600 hover:text-bodylife-red transition-colors py-2 group"
           >
             <Mail size={16} className="text-gray-400 group-hover:text-bodylife-red transition-colors" />
@@ -141,8 +142,9 @@ export default function Navbar() {
             </a>
           ))}
 
+          {/* TRABALHE CONOSCO DIRECIONANDO PARA O FOOTER NO MOBILE */}
           <a
-            href="mailto:selecao@institutobodylife.com.br"
+            href="#contato"
             onClick={closeMenu}
             style={{
               transitionDelay: isOpen ? `${navLinks.length * 50}ms` : '0ms',
@@ -155,7 +157,7 @@ export default function Navbar() {
             Trabalhe Conosco
           </a>
 
-          {/* Redes Sociais Mobile (Agora com Waze também) */}
+          {/* Redes Sociais Mobile */}
           <div 
             style={{
               transitionDelay: isOpen ? `${(navLinks.length + 1) * 50}ms` : '0ms',

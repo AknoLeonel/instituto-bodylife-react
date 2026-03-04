@@ -210,13 +210,16 @@ export default function Especialidades() {
             >
               <div className="relative h-[450px] w-full shrink-0 overflow-hidden bg-bodylife-base border-b border-gray-100">
                 <div className="absolute inset-0 bg-gradient-to-t from-bodylife-dark/20 via-transparent to-transparent z-10 pointer-events-none"></div>
+                
+                {/* Imagem Desktop SEM ZOOM e com Object Contain */}
                 <img 
                   src={activeEspecialidade.imagem} 
                   alt={activeEspecialidade.alt} 
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-contain transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-out" 
+                  className="w-full h-full object-contain" 
                 />
+                
                 <div className="absolute bottom-6 left-8 z-20 flex flex-col items-start gap-2">
                   <h3 className="text-4xl font-bold text-bodylife-dark tracking-tight drop-shadow-sm bg-white/90 backdrop-blur-sm px-5 py-2.5 rounded-xl border border-white/50">
                     {activeEspecialidade.titulo}

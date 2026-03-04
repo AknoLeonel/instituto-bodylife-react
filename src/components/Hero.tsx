@@ -1,4 +1,4 @@
-import { CalendarCheck, Users, ArrowRight } from 'lucide-react';
+import { CalendarCheck, ArrowRight } from 'lucide-react';
 
 import fachadaImg from '../assets/EstruturaFachada2.png';
 import logoImg from '../assets/logo.png';
@@ -16,7 +16,7 @@ export default function Hero() {
         
         <div className="space-y-8 animate-fade-in">
           
-          {/* Título Principal (Otimizado e limpo, sem o badge gigante) */}
+          {/* Título Principal */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-bodylife-dark leading-[1.05] tracking-tight">
             Saúde e <br className="hidden md:block" /> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-bodylife-red to-red-700 drop-shadow-sm font-bold">
@@ -72,42 +72,9 @@ export default function Hero() {
             decoding="sync"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[10s] ease-out"
           />
-          
-          <div 
-            className="absolute bottom-8 left-6 md:left-8 z-20 bg-white/95 backdrop-blur-md p-4 md:p-5 rounded-2xl shadow-2xl border border-white/40"
-            style={{ animation: 'float 6s ease-in-out infinite' }}
-          >
-            <div className="flex items-center gap-3 md:gap-4">
-              <div className="bg-bodylife-red/10 p-3 rounded-full text-bodylife-red shrink-0">
-                <Users size={24} />
-              </div>
-              <div>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-widest mb-0.5">Equipe</p>
-                <p className="text-base md:text-lg font-bold text-bodylife-dark leading-none">Multidisciplinar</p>
-              </div>
-            </div>
-          </div>
-
-          <div 
-            className="absolute top-8 right-6 md:right-8 z-20 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-2xl border border-white/40 flex items-center gap-3"
-            style={{ animation: 'float 5s ease-in-out infinite reverse' }}
-          >
-            <span className="flex h-3 w-3 relative shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-            <span className="font-bold text-bodylife-dark text-xs md:text-sm uppercase tracking-wider">Atendimento Imediato</span>
-          </div>
         </div>
 
       </div>
-
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
-        }
-      `}</style>
     </section>
   );
 }

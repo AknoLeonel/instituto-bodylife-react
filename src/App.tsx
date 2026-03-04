@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 // Importação dos componentes refinados
@@ -92,7 +92,7 @@ function App() {
               href="https://instagram.com/institutobodylife" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-bodylife-dark text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-800 active:scale-95 transition-all shadow-xl"
+              className="inline-flex items-center justify-center gap-2 bg-bodylife-red text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-red-700 active:scale-95 transition-all shadow-xl"
             >
               @institutobodylife
             </a>
@@ -104,31 +104,6 @@ function App() {
       </article>
 
       <Footer />
-
-      {/* 4. BOTÃO WHATSAPP FLUTUANTE */}
-      <a 
-        href="https://wa.me/5561998796606?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta!" 
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 group active:scale-90 transition-all duration-300"
-        aria-label="Agendar consulta no WhatsApp"
-      >
-        <span className="absolute inset-[-8px] bg-green-500 rounded-full animate-pulse opacity-20 pointer-events-none"></span>
-        
-        <div className="bg-green-500 text-white p-4 rounded-2xl shadow-[0_10px_25px_rgba(34,197,94,0.4)] relative hover:bg-green-600 transition-colors flex items-center justify-center">
-          <MessageCircle size={32} className="group-hover:scale-110 transition-transform" />
-          
-          <span className="absolute top-3 right-3 flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-          </span>
-        </div>
-        
-        <div className="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-4 py-2 bg-bodylife-dark text-white rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 whitespace-nowrap transition-all duration-300 shadow-2xl translate-x-4 group-hover:translate-x-0 pointer-events-none">
-          Precisa de ajuda? **Fale conosco**
-          <div className="absolute top-1/2 -translate-y-1/2 left-full w-2 h-2 bg-bodylife-dark rotate-45 -translate-x-1/2"></div>
-        </div>
-      </a>
 
     </main>
   );
