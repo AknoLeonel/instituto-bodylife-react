@@ -3,11 +3,11 @@ import { MessageCircle, CheckCircle2, ChevronRight, ChevronDown, Activity } from
 
 // Importação das Imagens Reais (Pente Fino)
 import fisioImg from '../assets/FisioterapiaIBL.png';
-import esteticaImg from '../assets/Estética IBL.png';
+import esteticaImg from '../assets/EstéticaIBL.png';
 import pilatesImg from '../assets/PilatesIBL.png';
 import acupunturaImg from '../assets/AcupunturaIBL.png';
 import injetaveisImg from '../assets/InjetáveisIBL.png';
-import nutricaoImg from '../assets/NutriçãoIBL.png';
+import nutricaoImg from '../assets/Nutrição IBL.png';
 import clinicaImg from '../assets/MedicinaIBL.jpg'; 
 import psicologiaImg from '../assets/PsicologiaIBL.png';
 import enfermagemImg from '../assets/EnfermagemIBL.png';
