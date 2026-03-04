@@ -8,7 +8,7 @@ import pilatesImg from '../assets/PilatesIBL.png';
 import acupunturaImg from '../assets/AcupunturaIBL.png';
 import injetaveisImg from '../assets/InjetáveisIBL.png';
 import nutricaoImg from '../assets/Nutrição IBL.png';
-import clinicaImg from '../assets/MedicinaIBL.jpg'; 
+import clinicaImg from '../assets/MedicinaIBL.png'; 
 import psicologiaImg from '../assets/PsicologiaIBL.png';
 import enfermagemImg from '../assets/EnfermagemIBL.png';
 
