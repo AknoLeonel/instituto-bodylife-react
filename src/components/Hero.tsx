@@ -33,6 +33,7 @@ export default function Hero() {
               href="https://wa.me/5561998796606?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta!" 
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => (window as any).fbq('track', 'Lead')}
               className="flex items-center justify-center gap-3 bg-bodylife-red text-white px-8 py-4 md:py-5 rounded-2xl font-bold text-lg hover:bg-red-700 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(211,47,47,0.3)] hover:shadow-[0_15px_40px_rgba(211,47,47,0.5)] group"
             >
               <CalendarCheck size={24} className="group-hover:-rotate-12 transition-transform duration-300" />
