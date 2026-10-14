@@ -1,74 +1,33 @@
-# React + TypeScript + Vite
+# Instituto Bodylife
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site do centro de saúde integrada no Guará I, Brasília.
 
-Currently, two official plugins are available:
+[![Ver site no ar](https://img.shields.io/badge/Ver%20site%20no%20ar-00F5FF?style=for-the-badge&labelColor=0D1117)](https://instituto-bodylife-react.vercel.app) [![Portfólio](https://img.shields.io/badge/Portfólio-FF00E4?style=for-the-badge&labelColor=0D1117)](https://aknoleonel.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o projeto
 
-## React Compiler
+O Instituto Bodylife reúne fisioterapia, enfermagem, pilates, estética, nutrição e medicina em um só lugar. O site apresenta as especialidades, os convênios aceitos e a localização, sempre com o agendamento de consulta a um clique.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Destaques
 
-## Expanding the ESLint configuration
+- Agendamento de consulta em destaque em todas as seções
+- Páginas de especialidades e tratamentos
+- Lista de convênios, mapa de localização e área Trabalhe Conosco
+- Tipagem com TypeScript e estilos com Tailwind CSS 4
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+React · TypeScript · Vite · Tailwind CSS · Lucide Icons
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Rodando localmente
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Para gerar a versão de produção: `npm run build`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-updt
+Desenvolvido por [Leonel Paiva](https://github.com/AknoLeonel) · [Instagram](https://www.instagram.com/muvageof) · [Mais projetos](https://aknoleonel.github.io)
